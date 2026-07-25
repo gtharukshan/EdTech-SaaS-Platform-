@@ -23,7 +23,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
       ],
       cta: 'Get Started Free',
       popular: false,
-      buttonStyle: 'bg-white/10 text-white hover:bg-white/20 border border-white/15',
+      buttonStyle: 'bg-slate-900 text-white dark:bg-white/10 dark:text-white hover:bg-slate-800 dark:hover:bg-white/20 border border-slate-700 dark:border-white/15',
     },
     {
       name: 'Pro Student',
@@ -56,34 +56,34 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
       ],
       cta: 'Register Institution',
       popular: false,
-      buttonStyle: 'bg-white/10 text-white hover:bg-white/20 border border-white/15',
+      buttonStyle: 'bg-slate-900 text-white dark:bg-white/10 dark:text-white hover:bg-slate-800 dark:hover:bg-white/20 border border-slate-700 dark:border-white/15',
     },
   ];
 
   return (
-    <section id="pricing" className="relative py-28 bg-[#050505] overflow-hidden">
+    <section id="pricing" className="relative py-28 bg-slate-50 dark:bg-[#050505] overflow-hidden transition-colors duration-300">
       <div className="ambient-glow-cyan top-1/2 right-1/4 opacity-50 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#00D6FF] border border-[#00D6FF]/30 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-4">
             <Zap className="w-3.5 h-3.5" /> TRANSPARENT MEMBERSHIP
           </div>
-          <h2 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
             Invest in your <span className="text-gradient-cyan">academic future.</span>
           </h2>
-          <p className="text-base sm:text-lg text-white/70 mb-8">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-white/70 mb-8">
             Choose the plan that fits your learning pace. Cancel anytime.
           </p>
 
           {/* Monthly / Annual Toggle */}
-          <div className="inline-flex items-center gap-3 p-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 p-1.5 rounded-full bg-slate-200/80 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 backdrop-blur-md">
             <button
               onClick={() => setIsAnnual(false)}
               className={`px-5 py-2 rounded-full text-xs font-medium transition-all ${
-                !isAnnual ? 'bg-white/15 text-white font-bold' : 'text-white/60 hover:text-white'
+                !isAnnual ? 'bg-[#0050FF] text-white font-bold' : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               Monthly Billing
@@ -91,11 +91,11 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
             <button
               onClick={() => setIsAnnual(true)}
               className={`px-5 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2 ${
-                isAnnual ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-bold shadow-[0_0_15px_rgba(0,214,255,0.4)]' : 'text-white/60 hover:text-white'
+                isAnnual ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-bold shadow-[0_0_15px_rgba(0,214,255,0.4)]' : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               <span>Annual Billing</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/20 text-emerald-300 font-mono">Save 20%</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 font-mono font-bold">Save 20%</span>
             </button>
           </div>
         </div>
@@ -111,8 +111,8 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className={`relative rounded-3xl glass-panel p-8 border flex flex-col justify-between transition-all duration-500 ${
                 plan.popular
-                  ? 'border-[#00D6FF]/60 bg-gradient-to-b from-[#0050FF]/15 via-[#080A10] to-[#050505] shadow-[0_0_60px_rgba(0,214,255,0.25)] scale-105 z-20'
-                  : 'border-white/10 hover:border-white/30 z-10'
+                  ? 'border-[#00D6FF]/60 bg-white dark:bg-gradient-to-b dark:from-[#0050FF]/15 dark:via-[#080A10] dark:to-[#050505] shadow-xl dark:shadow-[0_0_60px_rgba(0,214,255,0.25)] scale-105 z-20'
+                  : 'border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/30 z-10'
               }`}
             >
               {plan.popular && (
@@ -122,20 +122,20 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
               )}
 
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-xs text-white/60 mb-6 min-h-[36px]">{plan.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{plan.name}</h3>
+                <p className="text-xs text-slate-600 dark:text-white/60 mb-6 min-h-[36px]">{plan.description}</p>
 
                 <div className="mb-6 flex items-baseline gap-1 font-mono">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-white">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
                     {isAnnual ? plan.priceAnnual : plan.priceMonthly}
                   </span>
-                  <span className="text-xs text-white/50">/ month</span>
+                  <span className="text-xs text-slate-500 dark:text-white/50">/ month</span>
                 </div>
 
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs text-white/80">
-                      <Check className="w-4 h-4 text-[#00D6FF] flex-shrink-0 mt-0.5" />
+                    <div key={idx} className="flex items-start gap-3 text-xs text-slate-700 dark:text-white/80">
+                      <Check className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF] flex-shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -151,7 +151,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <p className="text-[10px] text-center text-white/40 font-mono mt-3">
+                <p className="text-[10px] text-center text-slate-400 dark:text-white/40 font-mono mt-3">
                   No credit card required for trial
                 </p>
               </div>
