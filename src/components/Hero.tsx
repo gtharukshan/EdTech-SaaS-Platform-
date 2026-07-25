@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Sparkles, ShieldCheck, Star, Users, Zap } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles, Star, Zap } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenAuth?: (mode?: 'register' | 'login') => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenAuth }) => {
   return (
     <section id="overview" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#050505] bg-grid-pattern">
       {/* Ambient background glows */}
@@ -19,7 +23,10 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill text-xs sm:text-sm text-white/80 border border-white/10 hover:border-[#00D6FF]/40 transition-all cursor-pointer group shadow-[0_0_15px_rgba(0,214,255,0.1)]">
+          <div 
+            onClick={() => onOpenAuth && onOpenAuth('register')}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-pill text-xs sm:text-sm text-white/80 border border-white/10 hover:border-[#00D6FF]/40 transition-all cursor-pointer group shadow-[0_0_15px_rgba(0,214,255,0.1)]"
+          >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D6FF] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00D6FF]"></span>
@@ -70,8 +77,8 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.55 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <a
-              href="#story"
+            <button
+              onClick={() => onOpenAuth && onOpenAuth('register')}
               className="w-full sm:w-auto relative group inline-flex items-center justify-center p-0.5 overflow-hidden font-semibold rounded-full shadow-[0_0_35px_rgba(0,80,255,0.4)] transition-all duration-300 hover:shadow-[0_0_50px_rgba(0,214,255,0.6)] hover:scale-105"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-[#0050FF] via-[#00A3FF] to-[#00D6FF]"></span>
@@ -79,15 +86,15 @@ export const Hero: React.FC = () => {
                 <span>Start Learning Now</span>
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 text-[#00D6FF]" />
               </span>
-            </a>
+            </button>
 
-            <a
-              href="#courses"
+            <button
+              onClick={() => onOpenAuth && onOpenAuth('register')}
               className="w-full sm:w-auto px-8 py-4 rounded-full glass-panel text-white/90 hover:text-white font-medium text-base flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 transition-all duration-300 hover:bg-white/5"
             >
               <BookOpen className="w-5 h-5 text-[#00D6FF]" />
-              <span>Explore Courses</span>
-            </a>
+              <span>Explore Courses & Register</span>
+            </button>
           </motion.div>
         </div>
 
