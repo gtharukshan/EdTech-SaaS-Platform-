@@ -46,91 +46,112 @@ export interface TeacherProfile {
 export const TEACHER_DATA: Record<string, TeacherProfile> = {
   'Combined Maths': {
     id: 'teacher-maths',
-    name: 'Prof. Sarah Lin',
+    name: 'Eng R. Jeyakumar',
     title: 'Head of Combined Mathematics Faculty',
     subject: 'Combined Maths',
     subjectTag: 'Pure Mathematics & Applied Mechanics',
     degrees: [
-      'B.Sc. (Hons) First Class in Mathematics & Physics (MIT)',
-      'Ph.D. in Applied Mechanics & Pure Math (MIT)',
-      'Fields Medalist Finalist & Senior Research Fellow'
+      'B.Sc. Engineering (Peradeniya)',
+      'AMIE (SL)'
     ],
     imageCandidates: [
+      '/assets/teachers/jeyakumar.jpg',
+      '/assets/teachers/jeyakumar.png',
+      '/assets/teachers/jeyakumar.jpeg',
+      '/assets/teachers/jeyakumar.webp',
+      '/assets/teachers/eng-r-jeyakumar.jpg',
+      '/assets/teachers/eng-r-jeyakumar.png',
       '/assets/teachers/combined-maths.jpg',
       '/assets/teachers/combined-maths.png',
-      '/assets/teachers/sarah-lin.jpg',
-      '/assets/teachers/maths-teacher.jpg'
+      '/assets/teachers/combined-maths.jpeg',
+      '/assets/teachers/combined-maths.webp',
+      '/assets/teachers/maths-teacher.jpg',
+      '/assets/teachers/maths-teacher.png',
+      '/assets/teachers/maths.jpg',
+      '/assets/teachers/maths.png'
     ],
-    credentials: 'MIT Alum • Fields Medalist Finalist',
+    credentials: 'B.Sc. Eng (Peradeniya) • AMIE (SL)',
     studentsTaught: '32,000+',
     passRate: '99.9% A/A*',
     rating: 4.99,
     experience: '14+ Years',
-    bio: 'Pioneer in visual mathematics pedagogy. Specializes in transforming complex Pure Mathematics, Calculus, Vector Algebra, Statics, and Dynamics into intuitive, high-scoring exam techniques.',
+    bio: 'Senior Engineer & Master Educator specializing in visual mathematics pedagogy. Expert in Pure Mathematics, Calculus, Vector Geometry, Statics, and Dynamics.',
     keyHighlights: [
-      'Author of 5 National Top-Rank Maths Textbooks',
-      'Mentored 120+ Island / National Rank 1 Students',
-      'Custom AI Step-by-Step Proof Solver Pedagogy'
+      'Author of Top-Rank Combined Maths Resources',
+      'Mentored 120+ Island / District Top Rank Students',
+      'Custom Step-by-Step Problem Solving Systems'
     ],
     gradient: 'from-[#0050FF]/25 via-[#00D6FF]/15 to-transparent border-[#0050FF]/50',
     avatarColor: 'from-[#0050FF] to-[#00D6FF]'
   },
   'Physics': {
     id: 'teacher-physics',
-    name: 'Prof. Marcus Sterling',
+    name: 'Eng S. Balamurugan',
     title: 'Lead Physics Master Educator',
     subject: 'Physics',
-    subjectTag: 'Mechanics, Quantum & Electromagnetic Fields',
+    subjectTag: 'Mechanics, Fields, Waves & Modern Physics',
     degrees: [
-      'B.Sc. in Natural Sciences (Oxford University)',
-      'Ph.D. in Quantum Optics & Field Theory (Oxford)',
-      'Chair of Theoretical Physics Fellow'
+      'B.Sc. Engineering (Peradeniya)',
+      'MBA'
     ],
     imageCandidates: [
+      '/assets/teachers/balamurugan.jpg',
+      '/assets/teachers/balamurugan.png',
+      '/assets/teachers/balamurugan.jpeg',
+      '/assets/teachers/balamurugan.webp',
+      '/assets/teachers/eng-s-balamurugan.jpg',
+      '/assets/teachers/eng-s-balamurugan.png',
+      '/assets/teachers/marcus-sterling.png',
       '/assets/teachers/physics.jpg',
       '/assets/teachers/physics.png',
-      '/assets/teachers/marcus-sterling.jpg',
+      '/assets/teachers/physics.jpeg',
       '/assets/teachers/physics-teacher.jpg'
     ],
-    credentials: 'Oxford Alum • Chair of Physics',
+    credentials: 'B.Sc. Eng (Peradeniya) • MBA',
     studentsTaught: '24,000+',
     passRate: '99.8% A/A*',
     rating: 4.98,
     experience: '12+ Years',
-    bio: 'Published author in quantum optics, mechanics, and field theory. Renowned for breaking down complex physics concepts, electromagnetic fields, and wave equations into simple mental models.',
+    bio: 'Senior Engineer & Master Physics Educator renowned for breaking down complex physics concepts, electromagnetic fields, mechanics, and wave optics into clear mental models.',
     keyHighlights: [
-      'Former Head Examiner for Advanced Physics',
-      '98% Distinction Rate in Mechanics & Thermodynamics',
-      'Interactive 3D Visual Laboratory Pioneer'
+      'Senior Advanced Level Physics Master Coach',
+      '98% Distinction Rate in Mechanics & Field Theory',
+      'Interactive Visual Physics Learning Systems'
     ],
     gradient: 'from-[#00D6FF]/25 via-[#0050FF]/15 to-transparent border-[#00D6FF]/50',
     avatarColor: 'from-[#00D6FF] to-[#70CFFF]'
   },
   'Chemistry': {
     id: 'teacher-chemistry',
-    name: 'Dr. Aris Thorne',
+    name: 'Sivanesan Sir',
     title: 'Senior Chemistry Master Educator',
     subject: 'Chemistry',
     subjectTag: 'Physical, Organic & Inorganic Chemistry',
     degrees: [
-      'B.Sc. (Hons) in Chemistry (Imperial College London)',
-      'Ph.D. in Chemical Thermodynamics & Kinetics (Imperial)',
-      'Senior International Chemistry Olympiad Head Coach'
+      'B.Sc. Special Degree in Chemistry',
+      'Senior Chemistry Master Educator'
     ],
     imageCandidates: [
+      '/assets/teachers/sivanesan.jpg',
+      '/assets/teachers/sivanesan.png',
+      '/assets/teachers/sivanesan.jpeg',
+      '/assets/teachers/sivanesan.webp',
+      '/assets/teachers/sivanesan-sir.jpg',
+      '/assets/teachers/sivanesan-sir.png',
+      '/assets/teachers/mr-sivanesan.jpg',
+      '/assets/teachers/mr-sivanesan.png',
       '/assets/teachers/chemistry.jpg',
       '/assets/teachers/chemistry.png',
-      '/assets/teachers/aris-thorne.jpg',
       '/assets/teachers/chemistry-teacher.jpg'
     ],
-    credentials: 'Senior Olympiad Coach • PhD Imperial',
+    credentials: 'B.Sc. Chemistry • Senior Master Educator',
     studentsTaught: '21,000+',
     passRate: '99.5% A/A*',
     rating: 4.96,
     experience: '11+ Years',
-    bio: 'International Chemistry Olympiad head mentor specializing in organic reaction mechanisms, physical chemistry equilibrium, electrochemistry, and spectral analysis.',
+    bio: 'Master Chemistry Educator specializing in organic reaction mechanisms, physical chemistry equilibrium, electrochemistry, and inorganic reaction trends.',
     keyHighlights: [
-      'Coached 45 Gold Medalists in Chemistry Olympiads',
+      'Senior Advanced Level Chemistry Pedagogy Coach',
       'Creator of Reaction Mechanism Visualizer System',
       'Complete Inorganic & Organic Exam Mastery Systems'
     ],
@@ -139,31 +160,36 @@ export const TEACHER_DATA: Record<string, TeacherProfile> = {
   },
   'Biology': {
     id: 'teacher-biology',
-    name: 'Dr. Evelyn Vance',
+    name: 'K. Umamaheswaran',
     title: 'Head of Biological Sciences',
     subject: 'Biology',
-    subjectTag: 'Genetics, Molecular Biology & Physiology',
+    subjectTag: 'Genetics, Cell Biology, Plant & Animal Physiology',
     degrees: [
-      'B.Sc. in Natural Sciences & Genetics (Cambridge)',
-      'Ph.D. in Molecular Biology & Gene Editing (Cambridge)',
-      'Former Cambridge University Research Fellow'
+      'B.Sc. (Bachelor of Science)',
+      'PGDE (Postgraduate Diploma in Education)',
+      'NDIT (Sci)'
     ],
     imageCandidates: [
+      '/assets/teachers/umamaheswaran.jpg',
+      '/assets/teachers/umamaheswaran.png',
+      '/assets/teachers/umamaheswaran.jpeg',
+      '/assets/teachers/umamaheswaran.webp',
+      '/assets/teachers/k-umamaheswaran.jpg',
+      '/assets/teachers/k-umamaheswaran.png',
       '/assets/teachers/biology.jpg',
       '/assets/teachers/biology.png',
-      '/assets/teachers/evelyn-vance.jpg',
       '/assets/teachers/biology-teacher.jpg'
     ],
-    credentials: 'PhD Molecular Biology • Cambridge Alum',
+    credentials: 'B.Sc. • PGDE • NDIT(Sci)',
     studentsTaught: '18,500+',
     passRate: '99.4% A/A*',
     rating: 4.97,
     experience: '10+ Years',
-    bio: 'Former Cambridge research fellow specializing in molecular genetics, cellular respiration, plant physiology, biotechnology, and human anatomy.',
+    bio: 'Master Biology Educator specializing in cell biology, molecular genetics, plant physiology, animal anatomy, biotechnology, and ecology.',
     keyHighlights: [
       'Pioneered High-Score Essay & Diagram Formatting',
-      'Published in Cell & Nature Research Journals',
-      'Integrated 3D Cellular Animation Learning System'
+      'Senior Advanced Level Biology Pedagogy Master',
+      'Integrated Visual & Conceptual Biological Learning'
     ],
     gradient: 'from-[#00D6FF]/25 via-[#0050FF]/15 to-transparent border-[#00D6FF]/50',
     avatarColor: 'from-[#00D6FF] to-[#0050FF]'

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Menu, X, ArrowRight, BookOpen, Cpu } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenAuth?: (mode?: 'register' | 'login') => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -70,10 +74,16 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* RIGHT: Primary CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="#ai-tutor"
+          {/* RIGHT: Primary CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => onOpenAuth && onOpenAuth('login')}
+              className="px-4 py-2 rounded-full text-xs lg:text-sm font-mono text-white/80 hover:text-white hover:bg-white/10 transition-all"
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => onOpenAuth && onOpenAuth('register')}
               className="relative group inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold rounded-full shadow-[0_0_25px_rgba(0,80,255,0.35)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,214,255,0.5)] hover:scale-[1.02]"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-[#0050FF] to-[#00D6FF] group-hover:opacity-90 transition-opacity"></span>
@@ -81,7 +91,7 @@ export const Navbar: React.FC = () => {
                 <span>Start Learning</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-[#00D6FF]" />
               </span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle Button */}

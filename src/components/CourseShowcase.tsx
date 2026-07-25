@@ -20,7 +20,11 @@ interface Course {
   gradient: string;
 }
 
-export const CourseShowcase: React.FC = () => {
+interface CourseShowcaseProps {
+  onOpenAuth?: (mode?: 'register' | 'login') => void;
+}
+
+export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) => {
   const [activeTab, setActiveTab] = useState<'All' | 'Combined Maths' | 'Physics' | 'Chemistry' | 'Biology'>('All');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
@@ -30,8 +34,8 @@ export const CourseShowcase: React.FC = () => {
       title: 'Combined Mathematics: Pure & Applied Mechanics',
       category: 'A-Level',
       subject: 'Combined Maths',
-      instructor: 'Prof. Sarah Lin',
-      instructorRole: 'Fields Medalist Finalist, MIT',
+      instructor: 'Eng R. Jeyakumar',
+      instructorRole: 'B.Sc. Engineering (Peradeniya), AMIE (SL)',
       rating: 4.99,
       students: '24,500+',
       duration: '64 Hours',
@@ -45,8 +49,8 @@ export const CourseShowcase: React.FC = () => {
       title: 'Advanced Physics: Mechanics, Fields & Quantum',
       category: 'A-Level',
       subject: 'Physics',
-      instructor: 'Prof. Marcus Sterling',
-      instructorRole: 'Chair of Physics, Oxford Alum',
+      instructor: 'Eng S. Balamurugan',
+      instructorRole: 'B.Sc. Engineering (Peradeniya), MBA',
       rating: 4.98,
       students: '21,900+',
       duration: '58 Hours',
@@ -60,8 +64,8 @@ export const CourseShowcase: React.FC = () => {
       title: 'Advanced Chemistry: Physical, Organic & Inorganic',
       category: 'A-Level',
       subject: 'Chemistry',
-      instructor: 'Dr. Aris Thorne',
-      instructorRole: 'Senior Olympiad Coach',
+      instructor: 'Sivanesan Sir',
+      instructorRole: 'Senior Chemistry Master Educator',
       rating: 4.96,
       students: '19,800+',
       duration: '52 Hours',
@@ -75,8 +79,8 @@ export const CourseShowcase: React.FC = () => {
       title: 'Advanced Biology: Genetics, Molecular & Physiology',
       category: 'A-Level',
       subject: 'Biology',
-      instructor: 'Dr. Evelyn Vance',
-      instructorRole: 'PhD Molecular Biology, Cambridge',
+      instructor: 'K. Umamaheswaran',
+      instructorRole: 'B.Sc., PGDE, NDIT(Sci)',
       rating: 4.97,
       students: '18,400+',
       duration: '48 Hours',
@@ -351,14 +355,16 @@ export const CourseShowcase: React.FC = () => {
                   <span className="text-lg font-bold text-white font-mono">{selectedCourse.students}</span>
                 </div>
 
-                <a
-                  href="#pricing"
-                  onClick={() => setSelectedCourse(null)}
+                <button
+                  onClick={() => {
+                    setSelectedCourse(null);
+                    onOpenAuth && onOpenAuth('register');
+                  }}
                   className="px-6 py-3 rounded-full bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] hover:scale-105 transition-transform flex items-center gap-2"
                 >
-                  <span>Enroll in Course</span>
+                  <span>Enroll & Register</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>

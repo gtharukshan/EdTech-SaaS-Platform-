@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CinematicScrollStory } from './components/CinematicScrollStory';
@@ -10,17 +10,53 @@ import { TeacherSection } from './components/TeacherSection';
 import { Testimonials } from './components/Testimonials';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
+import { AuthModal } from './components/AuthModal';
+import { StudentDashboard } from './components/StudentDashboard';
 
 export function App() {
+  const [currentView, setCurrentView] = useState<'landing' | 'dashboard'>('landing');
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'register' | 'login'>('register');
+
+  const [studentProfile, setStudentProfile] = useState<{
+    name: string;
+    stream: 'Physical Science' | 'Biological Science';
+  }>({
+    name: 'Student Candidate',
+    stream: 'Physical Science',
+  });
+
+  const openAuth = (mode: 'register' | 'login' = 'register') => {
+    setAuthMode(mode);
+    setIsAuthOpen(true);
+  };
+
+  const handleNavigateToDashboard = (profile: { name: string; stream: 'Physical Science' | 'Biological Science' }) => {
+    setStudentProfile(profile);
+    setCurrentView('dashboard');
+  };
+
+  // IF STUDENT IS IN DASHBOARD VIEW -> RENDER DEDICATED STUDENT HOME / DASHBOARD PAGE!
+  if (currentView === 'dashboard') {
+    return (
+      <StudentDashboard
+        studentName={studentProfile.name}
+        stream={studentProfile.stream}
+        onNavigateHome={() => setCurrentView('landing')}
+      />
+    );
+  }
+
+  // OTHERWISE -> RENDER MAIN LANDING PAGE VIEW
   return (
     <div className="relative min-h-screen bg-[#050505] text-white selection:bg-[#00D6FF]/30 selection:text-[#00D6FF]">
       {/* Sticky Navigation Bar */}
-      <Navbar />
+      <Navbar onOpenAuth={openAuth} />
 
       {/* Main Content Sections */}
       <main>
         {/* 01: Hero Section with 3D Book Floating Visual */}
-        <Hero />
+        <Hero onOpenAuth={openAuth} />
 
         {/* 02: Core 400vh Scroll-Linked Canvas Storytelling */}
         <CinematicScrollStory />
@@ -29,7 +65,7 @@ export function App() {
         <FeatureCards />
 
         {/* 04: Course Catalog & Interactive Syllabus Modal */}
-        <CourseShowcase />
+        <CourseShowcase onOpenAuth={openAuth} />
 
         {/* 05: Live Interactive AI Tutor Prompt & Reasoning Demo */}
         <AiTutorDemo />
@@ -44,13 +80,23 @@ export function App() {
         <Testimonials />
 
         {/* 09: Membership Pricing Plans */}
-        <Pricing />
+        <Pricing onOpenAuth={openAuth} />
       </main>
 
       {/* Dark Luxury Footer */}
       <Footer />
+
+      {/* Interactive Registration & Login Portal Modal */}
+      <AuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+        initialMode={authMode}
+        onNavigateToDashboard={handleNavigateToDashboard}
+      />
     </div>
   );
 }
 
 export default App;
+
+

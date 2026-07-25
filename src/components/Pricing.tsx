@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Sparkles, Zap, ArrowRight, ShieldCheck } from 'lucide-react';
 
-export const Pricing: React.FC = () => {
+interface PricingProps {
+  onOpenAuth?: (mode?: 'register' | 'login') => void;
+}
+
+export const Pricing: React.FC<PricingProps> = ({ onOpenAuth }) => {
   const [isAnnual, setIsAnnual] = useState(true);
 
   const plans = [
@@ -50,7 +54,7 @@ export const Pricing: React.FC = () => {
         'Dedicated account manager & SLA guarantee',
         'Custom SSO & security compliance',
       ],
-      cta: 'Contact Education Team',
+      cta: 'Register Institution',
       popular: false,
       buttonStyle: 'bg-white/10 text-white hover:bg-white/20 border border-white/15',
     },
@@ -139,13 +143,13 @@ export const Pricing: React.FC = () => {
               </div>
 
               <div>
-                <a
-                  href="#overview"
+                <button
+                  onClick={() => onOpenAuth && onOpenAuth('register')}
                   className={`w-full py-4 rounded-xl font-semibold text-xs transition-all flex items-center justify-center gap-2 ${plan.buttonStyle}`}
                 >
                   <span>{plan.cta}</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
 
                 <p className="text-[10px] text-center text-white/40 font-mono mt-3">
                   No credit card required for trial
