@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal Line */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4 font-mono">
           <div>
-            © {new Date().getFullYear()} EduNova Technologies Inc. All rights reserved.
+            © {new Date().getFullYear()} Academy Technologies Inc. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

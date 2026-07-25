@@ -48,7 +48,4 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
-<<<<<<< HEAD
-node_modules/
-=======
->>>>>>> 4f8b578e6675c66874bc691f86d7b24fb57cd9fc
+

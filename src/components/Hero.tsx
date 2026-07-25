@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D6FF] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00D6FF]"></span>
             </span>
-            <span className="font-semibold text-white">EduNova AI 3.0 Live</span>
+            <span className="font-semibold text-white">Academy AI 3.0 Live</span>
             <span className="text-white/40">|</span>
             <span className="text-white/70 group-hover:text-white flex items-center gap-1">
               Next-Gen Learning Ecosystem
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                <span className="ml-2 text-xs font-mono text-white/40">EduNova Neural Core v3.8</span>
+                <span className="ml-2 text-xs font-mono text-white/40">Academy Neural Core v3.8</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-[#00D6FF]/10 text-[#00D6FF] border border-[#00D6FF]/30">

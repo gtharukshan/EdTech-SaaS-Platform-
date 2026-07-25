@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, Star, Users, Clock, ArrowRight, CheckCircle2, Sparkles, Filter, X } from 'lucide-react';
+import { BookOpen, Star, Users, Clock, ArrowRight, CheckCircle2, Sparkles, Filter, X, GraduationCap, Award, ListChecks } from 'lucide-react';
+import { TeacherProfileContainer, TEACHER_DATA } from './TeacherProfileContainer';
+import { SubjectSyllabusPanel } from './SubjectSyllabusPanel';
 
 interface Course {
   id: string;
   title: string;
   category: 'A-Level' | 'University' | 'Professional';
-  subject: string;
+  subject: 'Combined Maths' | 'Physics' | 'Chemistry' | 'Biology';
   instructor: string;
   instructorRole: string;
   rating: number;
@@ -97,7 +99,7 @@ export const CourseShowcase: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#00D6FF] border border-[#00D6FF]/30 mb-4">
               <BookOpen className="w-3.5 h-3.5" /> CURRICULUM CATALOG
@@ -125,72 +127,176 @@ export const CourseShowcase: React.FC = () => {
           </div>
         </div>
 
-        {/* Course Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map((course) => (
-            <motion.div
-              key={course.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4 }}
-              className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#00D6FF] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,80,255,0.25)]`}
-            >
-              <div>
-                {/* Course Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-white/10 text-white border border-white/15">
-                    {course.subject}
-                  </span>
-                  <div className="flex items-center gap-1 text-xs font-mono text-amber-400">
-                    <Star className="w-3.5 h-3.5 fill-current" />
-                    <span>{course.rating.toFixed(2)}</span>
-                  </div>
-                </div>
+        {/* Educator Spotlight Container / Classroom Container */}
+        <TeacherProfileContainer
+          selectedSubject={activeTab}
+          onSubjectChange={(subj) => setActiveTab(subj)}
+        />
 
-                {/* Title & Description */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00D6FF] transition-colors leading-snug">
-                  {course.title}
-                </h3>
-                <p className="text-xs text-white/65 leading-relaxed mb-6">
-                  {course.description}
-                </p>
-
-                {/* Topics Pills */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {course.topics.map((t, idx) => (
-                    <span key={idx} className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-white/70 border border-white/10">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Course Footer Info */}
-              <div className="pt-4 border-t border-white/10">
-                <div className="flex items-center justify-between text-xs text-white/60 mb-4 font-mono">
-                  <div className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#00D6FF]" />
-                    <span>{course.duration} ({course.lessons} Lessons)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-[#0050FF]" />
-                    <span>{course.students}</span>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => setSelectedCourse(course)}
-                  className="w-full py-3 rounded-xl bg-white/10 hover:bg-[#00D6FF] hover:text-black font-semibold text-xs text-white border border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
-                >
-                  <span>Explore Syllabus</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
+        {/* Course Cards Grid Header */}
+        <div className="flex items-center justify-between mt-12 mb-6">
+          <h3 className="text-xl font-bold text-white font-mono flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-[#00D6FF]" />
+            <span>
+              {activeTab === 'All' 
+                ? 'All Available Course Modules (4)' 
+                : `${activeTab} Module & Official Core Syllabus`}
+            </span>
+          </h3>
         </div>
+
+        {/* Course Layout Area */}
+        {activeTab !== 'All' ? (
+          /* Single Subject Active: Left = Course Card, Right = Full Official Core Syllabus Panel */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* Left Column: Course Card */}
+            <div className="lg:col-span-5 flex flex-col">
+              {filteredCourses.map((course) => (
+                <motion.div
+                  key={course.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#00D6FF] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,80,255,0.25)] h-full`}
+                >
+                  <div>
+                    {/* Course Header */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-white/10 text-white border border-white/15">
+                        {course.subject}
+                      </span>
+                      <div className="flex items-center gap-1 text-xs font-mono text-amber-400">
+                        <Star className="w-3.5 h-3.5 fill-current" />
+                        <span>{course.rating.toFixed(2)}</span>
+                      </div>
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00D6FF] transition-colors leading-snug">
+                      {course.title}
+                    </h3>
+                    <p className="text-xs text-white/70 leading-relaxed mb-6">
+                      {course.description}
+                    </p>
+
+                    {/* Topics Pills */}
+                    <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#00D6FF] mb-2 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5" /> Module Core Highlights
+                    </h4>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {course.topics.map((t, idx) => (
+                        <span key={idx} className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-white/80 border border-white/10">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Course Footer Info */}
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between text-xs text-white/60 mb-4 font-mono">
+                      <div className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-[#00D6FF]" />
+                        <span>{course.duration} ({course.lessons} Lessons)</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Users className="w-3.5 h-3.5 text-[#0050FF]" />
+                        <span>{course.students}</span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedCourse(course)}
+                      className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:from-[#0050FF] hover:to-[#70CFFF] font-semibold text-xs text-white border border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-[0_0_15px_rgba(0,214,255,0.3)]"
+                    >
+                      <span>View Detailed Syllabus Breakdown</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Right Column: Full Official Core Subject Syllabus Container */}
+            <div className="lg:col-span-7 flex flex-col">
+              <SubjectSyllabusPanel subject={activeTab} />
+            </div>
+
+          </div>
+        ) : (
+          /* All Subjects Active: 4 Column Course Cards Grid + Syllabus Panel below */
+          <div className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {filteredCourses.map((course) => (
+                <motion.div
+                  key={course.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#00D6FF] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,80,255,0.25)]`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-mono bg-white/10 text-white border border-white/15">
+                        {course.subject}
+                      </span>
+                      <div className="flex items-center gap-1 text-xs font-mono text-amber-400">
+                        <Star className="w-3.5 h-3.5 fill-current" />
+                        <span>{course.rating.toFixed(2)}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#00D6FF] transition-colors leading-snug">
+                      {course.title}
+                    </h3>
+                    <p className="text-xs text-white/65 leading-relaxed mb-6 line-clamp-3">
+                      {course.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {course.topics.slice(0, 3).map((t, idx) => (
+                        <span key={idx} className="text-[9px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] text-white/70 border border-white/10">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between text-xs text-white/60 mb-4 font-mono">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-[#00D6FF]" />
+                        <span>{course.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users className="w-3 h-3 text-[#0050FF]" />
+                        <span>{course.students}</span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        setActiveTab(course.subject);
+                      }}
+                      className="w-full py-2.5 rounded-xl bg-white/10 hover:bg-[#00D6FF] hover:text-black font-semibold text-xs text-white border border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                    >
+                      <span>Explore Subject Syllabus</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Comprehensive Syllabus Explorer for All Subjects */}
+            <SubjectSyllabusPanel subject="Combined Maths" />
+          </div>
+        )}
 
       </div>
 

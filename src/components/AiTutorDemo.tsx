@@ -88,11 +88,11 @@ export const AiTutorDemo: React.FC = () => {
       category: 'General AI',
       question: customInput,
       reasoning: [
-        'Searching EduNova knowledge graph...',
+        'Searching Academy knowledge graph...',
         'Cross-referencing 50,000+ academic papers and textbook models...',
         'Structuring personalized step-by-step explanation...',
       ],
-      answer: `EduNova AI Tutor response for: "${customInput}". The AI model breaks this down into fundamental principles, providing clear mathematical proofs and interactive practice exercises customized for your learning speed.`,
+      answer: `Academy AI Tutor response for: "${customInput}". The AI model breaks this down into fundamental principles, providing clear mathematical proofs and interactive practice exercises customized for your learning speed.`,
     };
 
     handleSelectPreset(newPreset);
@@ -121,7 +121,7 @@ export const AiTutorDemo: React.FC = () => {
             <Bot className="w-3.5 h-3.5" /> INTERACTIVE AI DEMO
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
-            Experience the <span className="text-gradient-cyan">EduNova AI Tutor.</span>
+            Experience the <span className="text-gradient-cyan">Academy AI Tutor.</span>
           </h2>
           <p className="text-base sm:text-lg text-white/70">
             Ask any question across physics, mathematics, chemistry, or code and watch real-time step-by-step neural reasoning.
@@ -141,7 +141,7 @@ export const AiTutorDemo: React.FC = () => {
               </div>
               <div>
                 <div className="text-base font-bold text-white flex items-center gap-2">
-                  EduNova Reasoning Engine v3.8
+                  Academy Reasoning Engine v3.8
                   <span className="w-2 h-2 rounded-full bg-[#00D6FF] animate-pulse"></span>
                 </div>
                 <div className="text-xs font-mono text-white/50">Latency: 14ms • Accuracy: 99.8%</div>

@@ -125,7 +125,7 @@ export const AiDashboardShowcase: React.FC = () => {
                 <div>
                   <h4 className="text-sm font-bold text-amber-300">2 Focus Areas Require Attention</h4>
                   <p className="text-xs text-white/70 mt-1">
-                    EduNova AI has analyzed your recent mock exams and identified slight friction in Integration by Parts and Benzene Reaction Mechanisms.
+                    Academy AI has analyzed your recent mock exams and identified slight friction in Integration by Parts and Benzene Reaction Mechanisms.
                   </p>
                 </div>
               </div>

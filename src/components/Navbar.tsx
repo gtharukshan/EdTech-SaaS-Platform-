@@ -48,11 +48,11 @@ export const Navbar: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight text-white flex items-center gap-1">
-                Edu<span className="text-gradient-cyan">Nova</span>
+                Sci<span className="text-gradient-cyan">Ence</span>
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#00D6FF] animate-pulse"></span>
               </span>
               <span className="text-[10px] uppercase tracking-widest text-white/40 -mt-1 font-mono">
-                AI Ecosystem
+                Academy Hatton
               </span>
             </div>
           </a>
