@@ -49,7 +49,7 @@ export function App() {
 
   // OTHERWISE -> RENDER MAIN LANDING PAGE VIEW
   return (
-    <div className="relative min-h-screen bg-[#050505] text-white selection:bg-[#00D6FF]/30 selection:text-[#00D6FF]">
+    <div className="relative min-h-screen bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-white selection:bg-[#00D6FF]/30 selection:text-[#00D6FF] transition-colors duration-300">
       {/* Sticky Navigation Bar */}
       <Navbar onOpenAuth={openAuth} />
 
