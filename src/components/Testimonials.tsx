@@ -38,7 +38,7 @@ export const Testimonials: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-4 font-bold">
             <Award className="w-3.5 h-3.5" /> PROVEN STUDENT SUCCESS
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
@@ -58,16 +58,16 @@ export const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative rounded-3xl glass-panel p-8 border border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/40 transition-all duration-500 flex flex-col justify-between"
+              className="relative rounded-3xl glass-panel p-8 border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-all duration-500 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-1 text-amber-500 dark:text-amber-400">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-4 h-4 fill-current text-[#F5D061]" />
                     ))}
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[#0050FF]/10 dark:bg-[#00D6FF]/10 text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 font-bold">
                     {t.improvement}
                   </span>
                 </div>
@@ -79,9 +79,9 @@ export const Testimonials: React.FC = () => {
 
               <div className="pt-6 border-t border-slate-200 dark:border-white/10">
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
-                <p className="text-xs text-[#0050FF] dark:text-[#00D6FF] font-mono mb-2">{t.role}</p>
+                <p className="text-xs text-[#D4AF37] dark:text-[#F5D061] font-mono mb-2 font-bold">{t.role}</p>
                 <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500 dark:text-white/50">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-green-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
                   <span>Accepted at {t.acceptedAt}</span>
                 </div>
               </div>

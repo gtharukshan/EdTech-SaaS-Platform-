@@ -16,7 +16,7 @@ export const TeacherSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-4 font-bold">
             <GraduationCap className="w-3.5 h-3.5" /> MASTER EDUCATORS
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
@@ -90,10 +90,10 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher, index, isSelected, o
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
       onClick={onSelect}
-      className={`group relative rounded-3xl glass-panel p-6 border transition-all duration-500 flex flex-col justify-between cursor-pointer hover:shadow-[0_20px_50px_rgba(0,80,255,0.25)] ${
+      className={`group relative rounded-3xl glass-panel p-6 border transition-all duration-500 flex flex-col justify-between cursor-pointer hover:shadow-[0_20px_50px_rgba(212,175,55,0.25)] ${
         isSelected 
-          ? 'border-[#0050FF] dark:border-[#00D6FF] bg-gradient-to-b from-[#0050FF]/15 to-[#00D6FF]/10 shadow-[0_0_30px_rgba(0,214,255,0.3)]' 
-          : 'border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/50 bg-white/80 dark:bg-white/[0.02]'
+          ? 'border-[#D4AF37] dark:border-[#F5D061] bg-gradient-to-b from-[#D4AF37]/15 to-[#F5D061]/10 shadow-[0_0_30px_rgba(245,208,97,0.3)]' 
+          : 'border-slate-200 dark:border-white/10 hover:border-[#F5D061]/50 bg-white/80 dark:bg-white/[0.02]'
       }`}
     >
       <div>
@@ -115,27 +115,27 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher, index, isSelected, o
                   </div>
                 </div>
                 <span className="text-[10px] font-mono text-white/50 flex items-center gap-1">
-                  <Upload className="w-2.5 h-2.5 text-[#00D6FF]" /> Upload photo
+                  <Upload className="w-2.5 h-2.5 text-[#F5D061]" /> Upload photo
                 </span>
               </div>
             </div>
           )}
 
-          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono bg-slate-950/70 dark:bg-black/60 backdrop-blur-md text-[#0050FF] dark:text-[#00D6FF] border border-slate-700 dark:border-[#00D6FF]/30 font-bold">
+          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono bg-slate-950/70 dark:bg-black/60 backdrop-blur-md text-[#D4AF37] dark:text-[#F5D061] border border-slate-700 dark:border-[#F5D061]/30 font-bold">
             {teacher.subject}
           </div>
         </div>
 
         {/* Info */}
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF] transition-colors leading-snug">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061] transition-colors leading-snug">
           {teacher.name}
         </h3>
-        <p className="text-xs text-[#0050FF] dark:text-[#00D6FF] font-mono mb-2">{teacher.title}</p>
+        <p className="text-xs text-[#D4AF37] dark:text-[#F5D061] font-mono mb-2 font-bold">{teacher.title}</p>
         
         {/* Degrees */}
         <div className="mb-4 text-[11px] text-slate-700 dark:text-white/70 font-mono space-y-1 bg-slate-100 dark:bg-white/[0.03] p-2.5 rounded-xl border border-slate-200 dark:border-white/5">
-          <div className="flex items-center gap-1 text-[#0050FF] dark:text-[#00D6FF] font-bold">
-            <Award className="w-3 h-3" /> Highest Qualifications:
+          <div className="flex items-center gap-1 text-[#D4AF37] dark:text-[#F5D061] font-bold">
+            <Award className="w-3 h-3 text-[#F5D061]" /> Highest Qualifications:
           </div>
           <div className="text-slate-800 dark:text-white/80 line-clamp-2">
             {teacher.degrees[0]}
@@ -155,11 +155,11 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ teacher, index, isSelected, o
         </div>
         <div>
           <div className="text-[10px] text-slate-500 dark:text-white/50 font-mono">Exam Success</div>
-          <div className="text-xs font-bold text-[#0050FF] dark:text-[#00D6FF] font-mono">{teacher.passRate}</div>
+          <div className="text-xs font-bold text-[#D4AF37] dark:text-[#F5D061] font-mono">{teacher.passRate}</div>
         </div>
         <button 
           onClick={onSelect}
-          className="p-2 rounded-xl bg-slate-200 dark:bg-white/10 group-hover:bg-[#0050FF] dark:group-hover:bg-[#00D6FF] group-hover:text-white dark:group-hover:text-black text-slate-800 dark:text-white transition-colors"
+          className="p-2 rounded-xl bg-slate-200 dark:bg-white/10 group-hover:bg-[#D4AF37] dark:group-hover:bg-[#F5D061] group-hover:text-slate-950 dark:group-hover:text-slate-950 text-slate-800 dark:text-white transition-colors"
           title="View Full Educator Profile"
         >
           <ArrowUpRight className="w-4 h-4" />

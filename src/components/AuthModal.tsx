@@ -127,7 +127,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       particleCount: 100,
       spread: 80,
       origin: { y: 0.6 },
-      colors: ['#0050FF', '#00D6FF', '#70CFFF', '#FFFFFF'],
+      colors: ['#D4AF37', '#F5D061', '#AA771C', '#FFFFFF'],
     });
   };
 
@@ -146,7 +146,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-3xl rounded-3xl glass-panel border border-slate-200 dark:border-[#00D6FF]/40 bg-white dark:bg-[#08090E] p-6 sm:p-10 shadow-2xl dark:shadow-[0_0_80px_rgba(0,214,255,0.25)] my-8 text-slate-900 dark:text-white"
+        className="relative w-full max-w-3xl rounded-3xl glass-panel border border-slate-200 dark:border-[#F5D061]/40 bg-white dark:bg-[#08090E] p-6 sm:p-10 shadow-2xl dark:shadow-[0_0_80px_rgba(245,208,97,0.25)] my-8 text-slate-900 dark:text-white"
       >
         {/* Top Controls: Theme Toggle & Close Button */}
         <div className="absolute top-6 right-6 flex items-center gap-2 z-20">
@@ -171,7 +171,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {!isSubmitted && (
           <div className="mb-8">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-4 pr-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono bg-[#0050FF]/10 dark:bg-[#00D6FF]/15 text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 font-semibold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 font-semibold">
                 <GraduationCap className="w-3.5 h-3.5" /> ACADEMY ADMISSIONS PORTAL
               </div>
 
@@ -180,9 +180,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 <button
                   type="button"
                   onClick={() => { setMode('register'); setStep(1); }}
-                  className={`px-4 py-1.5 rounded-full text-xs font-medium font-mono transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-extrabold font-mono transition-all ${
                     mode === 'register' 
-                      ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white shadow-md' 
+                      ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 shadow-md' 
                       : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -191,9 +191,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setMode('login')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-medium font-mono transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-extrabold font-mono transition-all ${
                     mode === 'login' 
-                      ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white shadow-md' 
+                      ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 shadow-md' 
                       : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -226,10 +226,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 ].map((s) => (
                   <div key={s.num} className="flex flex-col gap-1">
                     <div className={`h-1.5 rounded-full transition-all duration-300 ${
-                      step >= s.num ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF]' : 'bg-slate-200 dark:bg-white/10'
+                      step >= s.num ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061]' : 'bg-slate-200 dark:bg-white/10'
                     }`} />
                     <span className={`text-[10px] font-mono transition-colors ${
-                      step === s.num ? 'text-[#0050FF] dark:text-[#00D6FF] font-bold' : 'text-slate-400 dark:text-white/40'
+                      step === s.num ? 'text-[#D4AF37] dark:text-[#F5D061] font-bold' : 'text-slate-400 dark:text-white/40'
                     }`}>
                       0{s.num}. {s.title}
                     </span>
@@ -251,8 +251,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               exit={{ opacity: 0 }}
               className="text-center py-6"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0050FF] to-[#00D6FF] p-0.5 mx-auto mb-4 shadow-[0_0_30px_rgba(0,214,255,0.4)] flex items-center justify-center">
-                <CheckCircle2 className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#F5D061] p-0.5 mx-auto mb-4 shadow-[0_0_30px_rgba(245,208,97,0.4)] flex items-center justify-center">
+                <CheckCircle2 className="w-10 h-10 text-slate-950" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
@@ -263,15 +263,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               </p>
 
               {/* Digital Student Pass Badge */}
-              <div className="max-w-md mx-auto p-6 rounded-2xl glass-panel border border-[#00D6FF]/40 bg-gradient-to-br from-[#0050FF]/15 via-[#00D6FF]/10 to-transparent text-left relative overflow-hidden mb-8 shadow-xl">
+              <div className="max-w-md mx-auto p-6 rounded-2xl glass-panel border border-[#F5D061]/40 bg-gradient-to-br from-[#D4AF37]/15 via-[#F5D061]/10 to-transparent text-left relative overflow-hidden mb-8 shadow-xl">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/15 pb-4 mb-4">
                   <div>
-                    <span className="text-[10px] font-mono text-[#0050FF] dark:text-[#00D6FF] uppercase tracking-widest block font-bold">Official Student Pass</span>
+                    <span className="text-[10px] font-mono text-[#D4AF37] dark:text-[#F5D061] uppercase tracking-widest block font-bold">Official Student Pass</span>
                     <span className="text-lg font-bold text-slate-900 dark:text-white tracking-wide">
                       {formData.name || 'Student Candidate'}
                     </span>
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[#00D6FF]/20 text-[#0050FF] dark:text-[#00D6FF] border border-[#00D6FF]/30 font-bold">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[#F5D061]/20 text-[#D4AF37] dark:text-[#F5D061] border border-[#F5D061]/30 font-bold">
                     {formData.alStream}
                   </span>
                 </div>
@@ -291,7 +291,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500 dark:text-white/50">A/L Year:</span>
-                    <span className="text-[#0050FF] dark:text-[#00D6FF] font-bold">{formData.alYear}</span>
+                    <span className="text-[#D4AF37] dark:text-[#F5D061] font-bold">{formData.alYear}</span>
                   </div>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     onNavigateToDashboard({ name: studentName, stream });
                   }
                 }}
-                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-xs shadow-[0_0_25px_rgba(0,214,255,0.4)] hover:scale-105 transition-all font-mono"
+                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_25px_rgba(245,208,97,0.4)] hover:scale-105 transition-all font-mono"
               >
                 Go to Student Dashboard
               </button>
@@ -347,7 +347,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     placeholder="Enter registered Email, Phone or NIC"
                     value={formData.loginIdentity}
                     onChange={(e) => updateField('loginIdentity', e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                   />
                 </div>
               </div>
@@ -364,25 +364,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     placeholder="••••••••"
                     value={formData.loginPassword}
                     onChange={(e) => updateField('loginPassword', e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                   />
                 </div>
               </div>
 
               <div className="flex items-center justify-between text-xs font-mono pt-2">
                 <label className="flex items-center gap-2 text-slate-600 dark:text-white/60 cursor-pointer">
-                  <input type="checkbox" className="rounded bg-slate-200 dark:bg-white/10 border-slate-300 dark:border-white/20 text-[#0050FF] dark:text-[#00D6FF]" />
+                  <input type="checkbox" className="rounded bg-slate-200 dark:bg-white/10 border-slate-300 dark:border-white/20 text-[#D4AF37] dark:text-[#F5D061]" />
                   <span>Remember me</span>
                 </label>
-                <a href="#" className="text-[#0050FF] dark:text-[#00D6FF] hover:underline">Forgot password?</a>
+                <a href="#" className="text-[#D4AF37] dark:text-[#F5D061] hover:underline font-bold">Forgot password?</a>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:from-[#0050FF] hover:to-[#70CFFF] text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 mt-6"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_20px_rgba(245,208,97,0.4)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 mt-6"
               >
                 <span>Login to Portal</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-slate-950" />
               </button>
             </motion.form>
           ) : (
@@ -412,7 +412,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="e.g. A.B.C. Perera"
                             value={formData.name}
                             onChange={(e) => updateField('name', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -428,7 +428,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             required
                             value={formData.dob}
                             onChange={(e) => updateField('dob', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -446,7 +446,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           placeholder="Enter your complete legal full name"
                           value={formData.fullName}
                           onChange={(e) => updateField('fullName', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         />
                       </div>
                     </div>
@@ -463,7 +463,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           placeholder="e.g. 200512345678 or 991234567V"
                           value={formData.nic}
                           onChange={(e) => updateField('nic', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         />
                       </div>
                     </div>
@@ -491,7 +491,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           placeholder="House No, Street, City / District"
                           value={formData.address}
                           onChange={(e) => updateField('address', e.target.value)}
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         />
                       </div>
                     </div>
@@ -509,7 +509,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="077 123 4567"
                             value={formData.phone}
                             onChange={(e) => updateField('phone', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -526,7 +526,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="student@example.com"
                             value={formData.email}
                             onChange={(e) => updateField('email', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -545,7 +545,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="••••••••"
                             value={formData.password}
                             onChange={(e) => updateField('password', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -562,7 +562,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="••••••••"
                             value={formData.confirmPassword}
                             onChange={(e) => updateField('confirmPassword', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -592,7 +592,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="e.g. Royal College, Colombo"
                             value={formData.school}
                             onChange={(e) => updateField('school', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -604,7 +604,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                         <select
                           value={formData.alYear}
                           onChange={(e) => updateField('alYear', e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-[#0F111A] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-[#0F111A] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         >
                           <option value="2025 A/L" className="bg-white text-slate-900 dark:bg-[#0F111A] dark:text-white">2025 A/L Batch</option>
                           <option value="2026 A/L" className="bg-white text-slate-900 dark:bg-[#0F111A] dark:text-white">2026 A/L Batch</option>
@@ -626,12 +626,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           onClick={() => updateField('alStream', 'Physical Science')}
                           className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-start gap-3.5 ${
                             formData.alStream === 'Physical Science'
-                              ? 'border-[#0050FF] dark:border-[#00D6FF] bg-[#0050FF]/15 dark:bg-[#0050FF]/20 shadow-md dark:shadow-[0_0_20px_rgba(0,214,255,0.3)]'
+                              ? 'border-[#D4AF37] dark:border-[#F5D061] bg-[#D4AF37]/15 dark:bg-[#D4AF37]/20 shadow-md dark:shadow-[0_0_20px_rgba(245,208,97,0.3)]'
                               : 'border-slate-200 dark:border-white/10 bg-slate-100/70 dark:bg-white/[0.03] hover:border-slate-300 dark:hover:border-white/30'
                           }`}
                         >
                           <div className={`p-2.5 rounded-xl shrink-0 ${
-                            formData.alStream === 'Physical Science' ? 'bg-[#0050FF] dark:bg-[#00D6FF] text-white dark:text-black' : 'bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white'
+                            formData.alStream === 'Physical Science' ? 'bg-[#D4AF37] dark:bg-[#F5D061] text-slate-950 font-bold' : 'bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white'
                           }`}>
                             <Atom className="w-6 h-6" />
                           </div>
@@ -648,12 +648,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           onClick={() => updateField('alStream', 'Biological Science')}
                           className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-start gap-3.5 ${
                             formData.alStream === 'Biological Science'
-                              ? 'border-[#0050FF] dark:border-[#00D6FF] bg-[#00D6FF]/15 dark:bg-[#00D6FF]/20 shadow-md dark:shadow-[0_0_20px_rgba(0,214,255,0.3)]'
+                              ? 'border-[#D4AF37] dark:border-[#F5D061] bg-[#F5D061]/15 dark:bg-[#F5D061]/20 shadow-md dark:shadow-[0_0_20px_rgba(245,208,97,0.3)]'
                               : 'border-slate-200 dark:border-white/10 bg-slate-100/70 dark:bg-white/[0.03] hover:border-slate-300 dark:hover:border-white/30'
                           }`}
                         >
                           <div className={`p-2.5 rounded-xl shrink-0 ${
-                            formData.alStream === 'Biological Science' ? 'bg-[#0050FF] dark:bg-[#00D6FF] text-white dark:text-black' : 'bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white'
+                            formData.alStream === 'Biological Science' ? 'bg-[#D4AF37] dark:bg-[#F5D061] text-slate-950 font-bold' : 'bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-white'
                           }`}>
                             <Dna className="w-6 h-6" />
                           </div>
@@ -681,7 +681,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                               value={m}
                               checked={formData.medium === m}
                               onChange={(e) => updateField('medium', e.target.value)}
-                              className="text-[#0050FF] dark:text-[#00D6FF]"
+                              className="text-[#D4AF37] dark:text-[#F5D061]"
                             />
                             <span>{m}</span>
                           </label>
@@ -712,7 +712,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           placeholder="Enter parent's full name"
                           value={formData.parentName}
                           onChange={(e) => updateField('parentName', e.target.value)}
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         />
                       </div>
                     </div>
@@ -730,7 +730,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             placeholder="071 234 5678"
                             value={formData.parentPhone}
                             onChange={(e) => updateField('parentPhone', e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                           />
                         </div>
                       </div>
@@ -742,7 +742,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                         <select
                           value={formData.parentRelationship}
                           onChange={(e) => updateField('parentRelationship', e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-[#0F111A] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] font-mono"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-[#0F111A] border border-slate-300 dark:border-white/10 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] font-mono"
                         >
                           <option value="Father" className="bg-white text-slate-900 dark:bg-[#0F111A] dark:text-white">Father</option>
                           <option value="Mother" className="bg-white text-slate-900 dark:bg-[#0F111A] dark:text-white">Mother</option>
@@ -752,7 +752,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     </div>
 
                     <div className="p-4 rounded-xl bg-slate-100/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-white/60 font-mono flex items-start gap-2.5 mt-2">
-                      <ShieldCheck className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5" />
+                      <ShieldCheck className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5" />
                       <span>
                         By submitting this application, you confirm that all provided personal and parent information is accurate as per official records.
                       </span>
@@ -776,10 +776,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:from-[#0050FF] hover:to-[#70CFFF] text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] hover:scale-[1.02] transition-all flex items-center gap-2 font-mono"
+                  className="px-8 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_20px_rgba(245,208,97,0.4)] hover:scale-[1.02] transition-all flex items-center gap-2 font-mono"
                 >
                   <span>{step === 4 ? 'Submit Student Application' : 'Continue to Next Step'}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-slate-950" />
                 </button>
               </div>
             </form>

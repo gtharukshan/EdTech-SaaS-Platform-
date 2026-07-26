@@ -182,16 +182,16 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.4 }}
-      className="relative rounded-2xl glass-panel p-6 border border-slate-200 dark:border-[#00D6FF]/30 bg-white dark:bg-[#080A10] flex flex-col justify-between shadow-lg dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full min-h-[480px]"
+      className="relative rounded-2xl glass-panel p-6 border border-slate-200 dark:border-[#D4AF37]/30 bg-white dark:bg-[#080A10] flex flex-col justify-between shadow-lg dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full min-h-[480px]"
     >
       {/* Background glow accent */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D6FF]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#F5D061]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div>
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200 dark:border-white/10">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#0050FF]/10 dark:bg-[#00D6FF]/15 text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-2">
               <ListChecks className="w-3.5 h-3.5" /> Official Core Syllabus
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -210,7 +210,7 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
               placeholder="Search topic..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF] transition-colors font-mono"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] transition-colors font-mono"
             />
           </div>
         </div>
@@ -225,9 +225,9 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
                   setActiveCategoryIndex(idx);
                   setSearchTerm('');
                 }}
-                className={`flex-1 py-2 px-3 rounded-lg text-xs font-medium font-mono transition-all duration-300 ${
+                className={`flex-1 py-2 px-3 rounded-lg text-xs font-mono font-extrabold transition-all duration-300 ${
                   activeCategoryIndex === idx
-                    ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white shadow-md'
+                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 shadow-md'
                     : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5'
                 }`}
               >
@@ -239,7 +239,7 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
 
         {/* Category Section Title */}
         <div className="flex items-center justify-between mb-3 text-xs font-mono text-slate-600 dark:text-white/60">
-          <span className="text-[#0050FF] dark:text-[#00D6FF] font-semibold">{currentCategory.title}</span>
+          <span className="text-[#D4AF37] dark:text-[#F5D061] font-bold">{currentCategory.title}</span>
           <span>Showing {filteredTopics.length} topics</span>
         </div>
 
@@ -252,9 +252,9 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.02 }}
-                className="group p-2.5 rounded-xl bg-slate-100/70 dark:bg-white/[0.03] hover:bg-[#0050FF]/10 dark:hover:bg-[#00D6FF]/10 border border-slate-200 dark:border-white/10 hover:border-[#0050FF]/40 dark:hover:border-[#00D6FF]/40 transition-all duration-300 flex items-start gap-2.5"
+                className="group p-2.5 rounded-xl bg-slate-100/70 dark:bg-white/[0.03] hover:bg-[#D4AF37]/10 dark:hover:bg-[#F5D061]/10 border border-slate-200 dark:border-white/10 hover:border-[#D4AF37]/40 dark:hover:border-[#F5D061]/40 transition-all duration-300 flex items-start gap-2.5"
               >
-                <div className="w-5 h-5 rounded-md bg-[#0050FF]/15 dark:bg-[#00D6FF]/15 text-[#0050FF] dark:text-[#00D6FF] flex items-center justify-center text-[10px] font-mono font-bold shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                <div className="w-5 h-5 rounded-md bg-[#D4AF37]/15 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] flex items-center justify-center text-[10px] font-mono font-bold shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                   {index + 1}
                 </div>
                 <span className="text-xs text-slate-800 dark:text-white/85 group-hover:text-slate-900 dark:group-hover:text-white font-medium leading-snug">
@@ -273,12 +273,12 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
       {/* Footer Info & Download Syllabus */}
       <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
         <div className="flex items-center gap-2 text-slate-600 dark:text-white/60">
-          <Bookmark className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF]" />
+          <Bookmark className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061]" />
           <span>Includes Theory + Past Paper Revisions</span>
         </div>
         <button
           onClick={() => alert(`Downloading full official ${syllabus.subject} Syllabus PDF...`)}
-          className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-[#0050FF] hover:text-white dark:bg-white/10 dark:hover:bg-[#00D6FF] dark:hover:text-black text-slate-800 dark:text-white text-xs font-mono transition-all duration-300 flex items-center gap-2 border border-slate-300 dark:border-white/15"
+          className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-[#D4AF37] hover:text-slate-950 dark:bg-white/10 dark:hover:bg-[#F5D061] dark:hover:text-black text-slate-800 dark:text-white text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 border border-slate-300 dark:border-white/15"
         >
           <Download className="w-3.5 h-3.5" />
           <span>Syllabus PDF</span>

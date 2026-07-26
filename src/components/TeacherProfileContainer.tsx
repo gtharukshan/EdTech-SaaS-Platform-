@@ -75,8 +75,8 @@ export const TEACHER_DATA: Record<string, TeacherProfile> = {
       'Over 99.9% student distinction rate in GCE A/L & Cambridge',
       'Creator of Neural Step-by-Step Integration Resolver'
     ],
-    gradient: 'from-[#0050FF]/15 via-[#00D6FF]/10 to-transparent border-[#0050FF]/40 dark:from-[#0050FF]/30 dark:via-[#00D6FF]/15 dark:to-transparent dark:border-[#0050FF]/60',
-    avatarColor: 'from-[#0050FF] to-[#00D6FF]',
+    gradient: 'from-[#D4AF37]/15 via-[#F5D061]/10 to-transparent border-[#D4AF37]/40 dark:from-[#D4AF37]/30 dark:via-[#F5D061]/15 dark:to-transparent dark:border-[#D4AF37]/60',
+    avatarColor: 'from-[#D4AF37] to-[#F5D061]',
   },
   'Physics': {
     id: 'teacher-physics',
@@ -107,8 +107,8 @@ export const TEACHER_DATA: Record<string, TeacherProfile> = {
       'Pioneered interactive 3D wave and electromagnetic visualizers',
       'Head of Advanced Physics Curriculum'
     ],
-    gradient: 'from-[#00D6FF]/15 via-[#0050FF]/10 to-transparent border-[#00D6FF]/40 dark:from-[#00D6FF]/25 dark:via-[#0050FF]/15 dark:to-transparent dark:border-[#00D6FF]/50',
-    avatarColor: 'from-[#00D6FF] to-[#0050FF]',
+    gradient: 'from-[#F5D061]/15 via-[#D4AF37]/10 to-transparent border-[#F5D061]/40 dark:from-[#F5D061]/25 dark:via-[#D4AF37]/15 dark:to-transparent dark:border-[#F5D061]/50',
+    avatarColor: 'from-[#F5D061] to-[#D4AF37]',
   },
   'Chemistry': {
     id: 'teacher-chemistry',
@@ -139,8 +139,8 @@ export const TEACHER_DATA: Record<string, TeacherProfile> = {
       'Senior Examiner and Chemistry Olympiad Chief Trainer',
       'Published 30+ peer-reviewed articles in chemical education'
     ],
-    gradient: 'from-[#0050FF]/15 via-[#70CFFF]/10 to-transparent border-[#0050FF]/40 dark:from-[#0050FF]/20 dark:via-[#70CFFF]/15 dark:to-transparent dark:border-[#0050FF]/50',
-    avatarColor: 'from-[#0050FF] to-[#70CFFF]',
+    gradient: 'from-[#D4AF37]/15 via-[#F5D061]/10 to-transparent border-[#D4AF37]/40 dark:from-[#D4AF37]/20 dark:via-[#F5D061]/15 dark:to-transparent dark:border-[#D4AF37]/50',
+    avatarColor: 'from-[#D4AF37] to-[#F5D061]',
   },
   'Biology': {
     id: 'teacher-biology',
@@ -170,8 +170,8 @@ export const TEACHER_DATA: Record<string, TeacherProfile> = {
       'Over 99.1% top grade achievement across A-Level exams',
       'Renowned lecturer on Biotechnology and Medical Entrance'
     ],
-    gradient: 'from-[#00D6FF]/15 via-[#0050FF]/10 to-transparent border-[#00D6FF]/40 dark:from-[#00D6FF]/25 dark:via-[#0050FF]/15 dark:to-transparent dark:border-[#00D6FF]/50',
-    avatarColor: 'from-[#00D6FF] to-[#0050FF]',
+    gradient: 'from-[#F5D061]/15 via-[#D4AF37]/10 to-transparent border-[#F5D061]/40 dark:from-[#F5D061]/25 dark:via-[#D4AF37]/15 dark:to-transparent dark:border-[#F5D061]/50',
+    avatarColor: 'from-[#F5D061] to-[#D4AF37]',
   }
 };
 
@@ -247,20 +247,20 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
       transition={{ duration: 0.5 }}
       className={`relative rounded-3xl glass-panel p-6 sm:p-8 border bg-gradient-to-br ${teacher.gradient} shadow-lg dark:shadow-[0_20px_60px_rgba(0,80,255,0.2)] overflow-hidden my-8`}
     >
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#00D6FF]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#F5D061]/10 rounded-full blur-3xl pointer-events-none" />
 
       {showSelectorTabs && (
         <div className="flex flex-wrap items-center gap-2 mb-8 pb-6 border-b border-slate-200 dark:border-white/10">
           <span className="text-xs font-mono text-slate-500 dark:text-white/50 mr-2 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#0050FF] dark:text-[#00D6FF]" /> Select Subject Educator:
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] dark:text-[#F5D061]" /> Select Subject Educator:
           </span>
           {(['Combined Maths', 'Physics', 'Chemistry', 'Biology'] as const).map((subj) => (
             <button
               key={subj}
               onClick={() => onSubjectChange && onSubjectChange(subj)}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-xs font-mono font-extrabold transition-all duration-300 ${
                 selectedSubject === subj
-                  ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white shadow-[0_0_15px_rgba(0,214,255,0.4)]'
+                  ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 shadow-[0_0_15px_rgba(245,208,97,0.4)]'
                   : 'bg-slate-200/80 dark:bg-white/5 text-slate-700 dark:text-white/60 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -283,15 +283,15 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
             ) : (
               <div className={`w-full h-full rounded-xl bg-gradient-to-br ${teacher.avatarColor} p-1 flex flex-col items-center justify-center text-center relative overflow-hidden`}>
                 <div className="w-full h-full bg-[#08090E]/90 backdrop-blur-md rounded-[10px] flex flex-col items-center justify-center p-6 relative">
-                  <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${teacher.avatarColor} p-0.5 mb-4 shadow-[0_0_30px_rgba(0,214,255,0.3)]`}>
-                    <div className="w-full h-full bg-[#05060A] rounded-[14px] flex items-center justify-center text-3xl font-extrabold text-white tracking-wider">
+                  <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${teacher.avatarColor} p-0.5 mb-4 shadow-[0_0_30px_rgba(245,208,97,0.3)]`}>
+                    <div className="w-full h-full bg-[#05060A] rounded-[14px] flex items-center justify-center text-3xl font-extrabold text-[#F5D061] tracking-wider">
                       {teacher.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>
                   <span className="text-sm font-bold text-white mb-1">{teacher.name}</span>
-                  <span className="text-[11px] text-[#00D6FF] font-mono mb-4">{teacher.subject} Lead</span>
+                  <span className="text-[11px] text-[#F5D061] font-mono mb-4">{teacher.subject} Lead</span>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-[10px] font-mono text-white/80">
-                    <Upload className="w-3 h-3 text-[#00D6FF]" />
+                    <Upload className="w-3 h-3 text-[#F5D061]" />
                     <span>Upload image to /public/assets/teachers/</span>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
             )}
 
             <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-950/80 dark:bg-black/70 backdrop-blur-md border border-slate-700 dark:border-white/10 text-left">
-              <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#0050FF] dark:text-[#00D6FF]">
+              <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#D4AF37] dark:text-[#F5D061]">
                 <ShieldCheck className="w-3.5 h-3.5" /> Verified Master Educator
               </div>
               <div className="text-xs text-white font-medium truncate mt-0.5">
@@ -319,7 +319,7 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
         <div className="lg:col-span-7 flex flex-col justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-3 mb-3">
-              <span className="px-3.5 py-1 rounded-full text-xs font-mono bg-[#0050FF]/10 dark:bg-[#00D6FF]/15 text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/40 font-semibold">
+              <span className="px-3.5 py-1 rounded-full text-xs font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/40 font-semibold">
                 {teacher.subject} Specialist
               </span>
               <span className="text-xs font-mono text-slate-500 dark:text-white/50">
@@ -330,18 +330,18 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
             <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
               {teacher.name}
             </h3>
-            <p className="text-sm font-mono text-[#0050FF] dark:text-[#00D6FF] mb-6 flex items-center gap-2">
+            <p className="text-sm font-mono text-[#D4AF37] dark:text-[#F5D061] mb-6 flex items-center gap-2">
               <GraduationCap className="w-4 h-4" /> {teacher.title}
             </p>
 
             <div className="mb-6 p-4 rounded-2xl bg-slate-100/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 backdrop-blur-sm">
-              <h4 className="text-xs font-mono uppercase tracking-widest text-[#0050FF] dark:text-[#00D6FF] mb-3 flex items-center gap-1.5">
+              <h4 className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] dark:text-[#F5D061] mb-3 flex items-center gap-1.5">
                 <Award className="w-4 h-4" /> Academic Degrees & Honors
               </h4>
               <div className="space-y-2">
                 {teacher.degrees.map((deg, idx) => (
                   <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-800 dark:text-white/90 font-medium">
-                    <ChevronRight className="w-3.5 h-3.5 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5" />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5" />
                     <span>{deg}</span>
                   </div>
                 ))}
@@ -355,7 +355,7 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
               {teacher.keyHighlights.map((hl, idx) => (
                 <div key={idx} className="p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 flex items-start gap-2 text-xs text-slate-800 dark:text-white/90">
-                  <CheckCircle2 className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5" />
                   <span>{hl}</span>
                 </div>
               ))}
@@ -371,16 +371,16 @@ const SingleTeacherView: React.FC<SingleTeacherViewProps> = ({
               <div className="h-8 w-px bg-slate-200 dark:bg-white/10" />
               <div>
                 <span className="text-[11px] font-mono text-slate-500 dark:text-white/50 block">Exam Pass Rate</span>
-                <span className="text-lg font-bold text-[#0050FF] dark:text-[#00D6FF] font-mono">{teacher.passRate}</span>
+                <span className="text-lg font-bold text-[#D4AF37] dark:text-[#F5D061] font-mono">{teacher.passRate}</span>
               </div>
             </div>
 
             <a
               href="#courses"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:from-[#0050FF] hover:to-[#70CFFF] text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_20px_rgba(245,208,97,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               <span>Explore {teacher.subject} Syllabus</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-slate-950" />
             </a>
           </div>
         </div>
@@ -423,20 +423,20 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="relative rounded-3xl glass-panel p-6 sm:p-8 border border-[#00D6FF]/40 bg-gradient-to-br from-[#00D6FF]/15 via-[#0050FF]/15 to-transparent shadow-lg dark:shadow-[0_20px_60px_rgba(0,214,255,0.15)] overflow-hidden my-8"
+      className="relative rounded-3xl glass-panel p-6 sm:p-8 border border-[#F5D061]/40 bg-gradient-to-br from-[#D4AF37]/15 via-[#F5D061]/15 to-transparent shadow-lg dark:shadow-[0_20px_60px_rgba(245,208,97,0.15)] overflow-hidden my-8"
     >
-      <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#0050FF]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none" />
 
       {showSelectorTabs && (
         <div className="flex flex-wrap items-center gap-2 mb-8 pb-6 border-b border-slate-200 dark:border-white/10">
           <span className="text-xs font-mono text-slate-500 dark:text-white/50 mr-2 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#0050FF] dark:text-[#00D6FF]" /> Select Subject Educator:
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] dark:text-[#F5D061]" /> Select Subject Educator:
           </span>
           {(['Combined Maths', 'Physics', 'Chemistry', 'Biology'] as const).map((subj) => (
             <button
               key={subj}
               onClick={() => onSubjectChange && onSubjectChange(subj)}
-              className="px-4 py-1.5 rounded-full text-xs font-medium bg-slate-200/80 dark:bg-white/5 text-slate-700 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition-all duration-300"
+              className="px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-slate-200/80 dark:bg-white/5 text-slate-700 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition-all duration-300"
             >
               {subj}
             </button>
@@ -455,15 +455,15 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
                 className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
-              <div className="w-full h-full rounded-xl bg-gradient-to-br from-[#0050FF] via-[#00D6FF]/80 to-[#0050FF] p-1 flex flex-col items-center justify-center text-center relative overflow-hidden">
+              <div className="w-full h-full rounded-xl bg-gradient-to-br from-[#D4AF37] via-[#F5D061]/80 to-[#D4AF37] p-1 flex flex-col items-center justify-center text-center relative overflow-hidden">
                 <div className="w-full h-full bg-[#08090E]/95 backdrop-blur-md rounded-[10px] flex flex-col items-center justify-center p-6 relative">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#0050FF] to-[#00D6FF] p-0.5 mb-3 shadow-[0_0_30px_rgba(0,214,255,0.4)] flex items-center justify-center">
-                    <Building2 className="w-10 h-10 text-white" />
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#F5D061] p-0.5 mb-3 shadow-[0_0_30px_rgba(245,208,97,0.4)] flex items-center justify-center">
+                    <Building2 className="w-10 h-10 text-slate-950" />
                   </div>
                   <span className="text-sm font-bold text-white mb-1">Smart Lecture Auditorium</span>
-                  <span className="text-[11px] text-[#00D6FF] font-mono mb-4">High-Tech Learning Campus</span>
+                  <span className="text-[11px] text-[#F5D061] font-mono mb-4">High-Tech Learning Campus</span>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-[10px] font-mono text-white/80">
-                    <Upload className="w-3 h-3 text-[#00D6FF]" />
+                    <Upload className="w-3 h-3 text-[#F5D061]" />
                     <span>Upload image to /public/assets/classroom/</span>
                   </div>
                 </div>
@@ -472,24 +472,24 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
 
             <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/80 dark:bg-black/75 backdrop-blur-md border border-slate-700 dark:border-white/15 text-left flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061] shrink-0" />
                 <div>
                   <div className="text-xs font-bold text-white leading-none">Main Academic Complex</div>
                   <div className="text-[10px] font-mono text-white/70 mt-0.5">Colombo • Nugegoda • Kandy • Online</div>
                 </div>
               </div>
-              <span className="px-2 py-0.5 rounded text-[9px] font-mono bg-[#00D6FF]/20 text-[#0050FF] dark:text-[#00D6FF] border border-[#00D6FF]/30">
+              <span className="px-2 py-0.5 rounded text-[9px] font-mono bg-[#F5D061]/20 text-[#D4AF37] dark:text-[#F5D061] border border-[#F5D061]/30">
                 Smart Campus
               </span>
             </div>
           </div>
 
           <div className="flex items-center justify-center gap-4 mt-4 text-xs font-mono text-slate-600 dark:text-white/70">
-            <span className="flex items-center gap-1 text-[#0050FF] dark:text-[#00D6FF]">
+            <span className="flex items-center gap-1 text-[#D4AF37] dark:text-[#F5D061]">
               <Wind className="w-3.5 h-3.5" /> 100% Climate Controlled
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1 text-[#0050FF] dark:text-[#00D6FF]">
+            <span className="flex items-center gap-1 text-[#D4AF37] dark:text-[#F5D061]">
               <Monitor className="w-3.5 h-3.5" /> Dual 4K Visualizers
             </span>
           </div>
@@ -498,7 +498,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
         <div className="lg:col-span-7 flex flex-col justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-2.5 mb-3">
-              <span className="px-3.5 py-1 rounded-full text-xs font-mono bg-[#00D6FF]/15 text-[#0050FF] dark:text-[#00D6FF] border border-[#00D6FF]/40 font-semibold flex items-center gap-1.5">
+              <span className="px-3.5 py-1 rounded-full text-xs font-mono bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] border border-[#F5D061]/40 font-semibold flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5" /> Classroom Facilities & Campus
               </span>
               <span className="text-xs font-mono text-slate-500 dark:text-white/50">
@@ -511,7 +511,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
             </h3>
 
             <div className="flex items-start gap-2 text-xs font-mono text-slate-700 dark:text-white/70 mb-6 bg-slate-100/80 dark:bg-white/[0.03] p-3 rounded-xl border border-slate-200 dark:border-white/10">
-              <MapPin className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900 dark:text-white">Primary Locations:</strong> Colombo Main Tech Auditorium, Nugegoda Science Center, Kandy City Campus, & Live Global Streaming Classroom.
               </div>
@@ -519,7 +519,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
 
             <div className="space-y-3 mb-6">
               <div className="p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-[#00D6FF]/10 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5">
+                <div className="p-2 rounded-lg bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5">
                   <Monitor className="w-4 h-4" />
                 </div>
                 <div>
@@ -531,7 +531,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
               </div>
 
               <div className="p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-[#0050FF]/10 text-[#0050FF] shrink-0 mt-0.5">
+                <div className="p-2 rounded-lg bg-[#D4AF37]/10 text-[#D4AF37] shrink-0 mt-0.5">
                   <Video className="w-4 h-4" />
                 </div>
                 <div>
@@ -543,7 +543,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
               </div>
 
               <div className="p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-[#00D6FF]/10 text-[#0050FF] dark:text-[#00D6FF] shrink-0 mt-0.5">
+                <div className="p-2 rounded-lg bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] shrink-0 mt-0.5">
                   <Users className="w-4 h-4" />
                 </div>
                 <div>
@@ -565,7 +565,7 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
               <div className="h-8 w-px bg-slate-200 dark:bg-white/10" />
               <div>
                 <span className="text-[11px] text-slate-500 dark:text-white/50 block">Campus Locations</span>
-                <span className="text-base font-bold text-[#0050FF] dark:text-[#00D6FF]">4 Centers</span>
+                <span className="text-base font-bold text-[#D4AF37] dark:text-[#F5D061]">4 Centers</span>
               </div>
               <div className="h-8 w-px bg-slate-200 dark:bg-white/10" />
               <div>
@@ -576,10 +576,10 @@ const ClassroomContainer: React.FC<ClassroomContainerProps> = ({
 
             <a
               href="#courses"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:scale-105 text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_20px_rgba(245,208,97,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               <span>Explore All Courses</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-slate-950" />
             </a>
           </div>
         </div>

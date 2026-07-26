@@ -14,9 +14,9 @@ export const Footer: React.FC = () => {
           {/* Brand Info (Cols 1-5) */}
           <div className="md:col-span-5 space-y-6">
             <a href="#" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0050FF] to-[#00D6FF] p-[1px] shadow-[0_0_20px_rgba(0,214,255,0.4)]">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#F5D061] p-[1px] shadow-[0_0_20px_rgba(245,208,97,0.4)]">
                 <div className="w-full h-full bg-white dark:bg-[#050505] rounded-[11px] flex items-center justify-center">
-                  <Cpu className="w-5 h-5 text-[#0050FF] dark:text-[#00D6FF]" />
+                  <Cpu className="w-5 h-5 text-[#D4AF37] dark:text-[#F5D061]" />
                 </div>
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -29,8 +29,8 @@ export const Footer: React.FC = () => {
             </p>
 
             {/* System Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-xs font-mono">
+              <span className="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse" />
               <span>All AI Engines Operational • 99.99% Uptime</span>
             </div>
           </div>
@@ -39,11 +39,11 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-widest text-slate-900 dark:text-white font-bold">Platform</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#overview" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Overview</a></li>
-              <li><a href="#story" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Scroll Story</a></li>
-              <li><a href="#features" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Core Features</a></li>
-              <li><a href="#courses" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Course Catalog</a></li>
-              <li><a href="#ai-tutor" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">AI Tutor Engine</a></li>
+              <li><a href="#overview" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Overview</a></li>
+              <li><a href="#story" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Scroll Story</a></li>
+              <li><a href="#features" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Core Features</a></li>
+              <li><a href="#courses" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Course Catalog</a></li>
+              <li><a href="#ai-tutor" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">AI Tutor Engine</a></li>
             </ul>
           </div>
 
@@ -51,11 +51,11 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-widest text-slate-900 dark:text-white font-bold">Resources</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#teachers" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Educators</a></li>
-              <li><a href="#pricing" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Pricing Plans</a></li>
-              <li><a href="#" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Research Papers</a></li>
-              <li><a href="#" className="hover:text-[#0050FF] dark:hover:text-[#00D6FF] transition-colors">Security & Privacy</a></li>
+              <li><a href="#teachers" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Educators</a></li>
+              <li><a href="#pricing" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Pricing Plans</a></li>
+              <li><a href="#" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Documentation</a></li>
+              <li><a href="#" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Research Papers</a></li>
+              <li><a href="#" className="hover:text-[#D4AF37] dark:hover:text-[#F5D061] transition-colors">Security & Privacy</a></li>
             </ul>
           </div>
 
@@ -68,14 +68,14 @@ export const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Enter your student email..."
-                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder-white/40 focus:outline-none focus:border-[#0050FF] dark:focus:border-[#00D6FF]"
+                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder-white/40 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061]"
               />
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-xs shadow-[0_0_15px_rgba(0,214,255,0.3)] hover:scale-[1.02] transition-transform flex items-center justify-center gap-2"
+                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_15px_rgba(245,208,97,0.3)] hover:scale-[1.02] transition-transform flex items-center justify-center gap-2"
               >
                 <span>Subscribe</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
               </button>
             </form>
           </div>

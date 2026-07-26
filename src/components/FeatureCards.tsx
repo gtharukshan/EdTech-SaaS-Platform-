@@ -9,8 +9,8 @@ export const FeatureCards: React.FC = () => {
       title: 'AI Learning Assistant',
       description: 'Get instant explanations, guidance, and personalized support anytime.',
       icon: Bot,
-      accent: 'from-[#0050FF] to-[#00D6FF]',
-      glowColor: 'group-hover:shadow-[0_0_40px_rgba(0,214,255,0.35)]',
+      accent: 'from-[#D4AF37] to-[#F5D061]',
+      glowColor: 'group-hover:shadow-[0_0_40px_rgba(245,208,97,0.35)]',
       highlight: '24/7 Real-Time Math & Code Solver',
     },
     {
@@ -18,8 +18,8 @@ export const FeatureCards: React.FC = () => {
       title: 'Expert Courses',
       description: 'Learn from experienced educators with structured, curriculum-aligned lessons.',
       icon: GraduationCap,
-      accent: 'from-[#00D6FF] to-[#0050FF]',
-      glowColor: 'group-hover:shadow-[0_0_40px_rgba(0,80,255,0.35)]',
+      accent: 'from-[#F5D061] to-[#D4AF37]',
+      glowColor: 'group-hover:shadow-[0_0_40px_rgba(212,175,55,0.35)]',
       highlight: '100% Cambridge & Edexcel Aligned',
     },
     {
@@ -27,8 +27,8 @@ export const FeatureCards: React.FC = () => {
       title: 'Smart Analytics',
       description: 'Track your progress and pinpoint weak areas with neural accuracy metrics.',
       icon: LineChart,
-      accent: 'from-[#0050FF] to-[#70CFFF]',
-      glowColor: 'group-hover:shadow-[0_0_40px_rgba(112,207,255,0.35)]',
+      accent: 'from-[#D4AF37] to-[#F5D061]',
+      glowColor: 'group-hover:shadow-[0_0_40px_rgba(245,208,97,0.35)]',
       highlight: 'Automated Score Prediction',
     },
     {
@@ -36,8 +36,8 @@ export const FeatureCards: React.FC = () => {
       title: 'Exam Preparation',
       description: 'Practice with timed quizzes, mock assessments, and real examination patterns.',
       icon: Award,
-      accent: 'from-[#00D6FF] to-[#0050FF]',
-      glowColor: 'group-hover:shadow-[0_0_40px_rgba(0,214,255,0.35)]',
+      accent: 'from-[#F5D061] to-[#D4AF37]',
+      glowColor: 'group-hover:shadow-[0_0_40px_rgba(212,175,55,0.35)]',
       highlight: '10,000+ Past Papers & Marking Schemes',
     },
   ];
@@ -51,7 +51,7 @@ export const FeatureCards: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-4">
             <Sparkles className="w-3.5 h-3.5" /> CORE PLATFORM INNOVATIONS
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
@@ -73,24 +73,24 @@ export const FeatureCards: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className={`group relative rounded-2xl glass-panel p-8 border border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/40 transition-all duration-500 flex flex-col justify-between ${feature.glowColor}`}
+                className={`group relative rounded-2xl glass-panel p-8 border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-all duration-500 flex flex-col justify-between ${feature.glowColor}`}
               >
                 {/* Top Card Bar */}
                 <div>
                   <div className="flex items-center justify-between mb-8">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.accent} p-0.5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <div className="w-full h-full bg-white dark:bg-[#08090E] rounded-[10px] flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-[#0050FF] dark:text-[#00D6FF]" />
+                        <Icon className="w-6 h-6 text-[#D4AF37] dark:text-[#F5D061]" />
                       </div>
                     </div>
-                    <span className="font-mono text-xs text-slate-400 dark:text-white/40 group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF] transition-colors">
+                    <span className="font-mono text-xs text-slate-400 dark:text-white/40 group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061] transition-colors">
                       {feature.id}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF] transition-colors flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061] transition-colors flex items-center justify-between">
                     <span>{feature.title}</span>
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#0050FF] dark:text-[#00D6FF]" />
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#D4AF37] dark:text-[#F5D061]" />
                   </h3>
 
                   <p className="text-sm text-slate-600 dark:text-white/65 leading-relaxed mb-6 font-normal">
@@ -99,7 +99,7 @@ export const FeatureCards: React.FC = () => {
                 </div>
 
                 {/* Bottom Highlight Tag */}
-                <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-mono text-[#0050FF] dark:text-[#00D6FF]/80 group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF]">
+                <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-mono text-[#D4AF37] dark:text-[#F5D061]/80 group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061]">
                   <span>{feature.highlight}</span>
                 </div>
               </motion.div>

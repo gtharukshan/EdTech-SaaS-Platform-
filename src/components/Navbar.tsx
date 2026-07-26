@@ -47,15 +47,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
           
           {/* LEFT: Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#0050FF] to-[#00D6FF] p-[1px] shadow-[0_0_20px_rgba(0,214,255,0.4)] transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#F5D061] p-[1px] shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-transform duration-300 group-hover:scale-105">
               <div className="w-full h-full bg-white dark:bg-[#050505] rounded-[11px] flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-[#0050FF] dark:text-[#00D6FF] transition-transform duration-300 group-hover:rotate-12" />
+                <Cpu className="w-5 h-5 text-[#D4AF37] dark:text-[#F5D061] transition-transform duration-300 group-hover:rotate-12" />
               </div>
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
                 Sci<span className="text-gradient-cyan">Ence</span>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#00D6FF] animate-pulse"></span>
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#F5D061] animate-pulse"></span>
               </span>
               <span className="text-[10px] uppercase tracking-widest text-slate-500 dark:text-white/40 -mt-1 font-mono">
                 Academy Hatton
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
               title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-              className="relative p-2.5 rounded-full bg-slate-100/90 dark:bg-white/[0.06] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:text-[#0050FF] dark:hover:text-amber-200 hover:bg-slate-200/80 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105 shadow-sm active:scale-95 group"
+              className="relative p-2.5 rounded-full bg-slate-100/90 dark:bg-white/[0.06] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:text-[#D4AF37] dark:hover:text-amber-200 hover:bg-slate-200/80 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105 shadow-sm active:scale-95 group"
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4 transition-transform duration-500 group-hover:rotate-45" />
@@ -104,12 +104,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
             {/* CTA Button */}
             <button
               onClick={() => onOpenAuth ? onOpenAuth('register') : null}
-              className="relative group inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold rounded-full shadow-[0_0_25px_rgba(0,80,255,0.35)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,214,255,0.5)] hover:scale-[1.02]"
+              className="relative group inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold rounded-full shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(245,208,97,0.5)] hover:scale-[1.02]"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-[#0050FF] to-[#00D6FF] group-hover:opacity-90 transition-opacity"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#F5D061] group-hover:opacity-90 transition-opacity"></span>
               <span className="relative px-5 py-2 rounded-full bg-slate-900 dark:bg-[#050505]/20 backdrop-blur-sm text-white flex items-center gap-2 text-xs lg:text-sm tracking-wide">
                 <span>Start Learning</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-[#00D6FF]" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-[#F5D061]" />
               </span>
             </button>
           </div>
@@ -155,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
                 className="w-full flex items-center justify-between py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-medium text-sm"
               >
                 <span>Theme Mode</span>
-                <div className="flex items-center gap-2 font-semibold text-xs text-[#0050FF] dark:text-[#00D6FF]">
+                <div className="flex items-center gap-2 font-semibold text-xs text-[#D4AF37] dark:text-[#F5D061]">
                   {theme === 'dark' ? (
                     <>
                       <Sun className="w-4 h-4 text-amber-400" />
@@ -175,10 +175,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
                   setMobileMenuOpen(false);
                   onOpenAuth && onOpenAuth('register');
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-sm shadow-[0_0_20px_rgba(0,80,255,0.4)]"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-bold text-sm shadow-[0_0_25px_rgba(212,175,55,0.4)]"
               >
                 <span>Start Learning Now</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-slate-950" />
               </button>
             </div>
           </div>
