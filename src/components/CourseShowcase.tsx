@@ -42,7 +42,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
       lessons: 92,
       description: 'Comprehensive mastery of Pure Mathematics, Trigonometry, Calculus, Vectors, Statics, and Dynamics.',
       topics: ['Integration & Differentiation', 'Vector Geometry & Matrices', 'Statics & Newton Laws', 'Projectiles & Equilibrium'],
-      gradient: 'from-[#0050FF]/15 to-[#00D6FF]/10 border-[#0050FF]/40 dark:from-[#0050FF]/30 dark:to-[#00D6FF]/20 dark:border-[#0050FF]/60',
+      gradient: 'from-[#D4AF37]/15 to-[#F5D061]/10 border-[#D4AF37]/40 dark:from-[#D4AF37]/30 dark:to-[#F5D061]/20 dark:border-[#D4AF37]/60',
     },
     {
       id: 'phy-201',
@@ -57,7 +57,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
       lessons: 84,
       description: 'Master Gravitational & Electric Fields, Electromagnetic Induction, Wave Optics, and Quantum Mechanics.',
       topics: ['Schrödinger Wave Math', 'Electric & Magnetic Fields', 'Wave Optics & Interference', 'Nuclear & Quantum Physics'],
-      gradient: 'from-[#00D6FF]/15 to-[#0050FF]/15 border-[#00D6FF]/40 dark:from-[#00D6FF]/25 dark:to-[#0050FF]/25 dark:border-[#00D6FF]/50',
+      gradient: 'from-[#F5D061]/15 to-[#D4AF37]/15 border-[#F5D061]/40 dark:from-[#F5D061]/25 dark:to-[#D4AF37]/25 dark:border-[#F5D061]/50',
     },
     {
       id: 'chem-301',
@@ -72,7 +72,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
       lessons: 76,
       description: 'Master organic reaction mechanisms, chemical thermodynamics, electrochemistry, and transition element chemistry.',
       topics: ['Organic Reaction Mechanisms', 'Enthalpy & Chemical Equilibrium', 'NMR & Mass Spectrometry', 'Electrochemistry'],
-      gradient: 'from-[#0050FF]/15 to-[#70CFFF]/15 border-[#0050FF]/40 dark:from-[#0050FF]/20 dark:to-[#70CFFF]/20 dark:border-[#0050FF]/50',
+      gradient: 'from-[#D4AF37]/15 to-[#F5D061]/15 border-[#D4AF37]/40 dark:from-[#D4AF37]/20 dark:to-[#F5D061]/20 dark:border-[#D4AF37]/50',
     },
     {
       id: 'bio-401',
@@ -87,7 +87,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
       lessons: 70,
       description: 'Comprehensive study of molecular genetics, cellular respiration, human physiology, and ecology.',
       topics: ['DNA Replication & Gene Expression', 'Recombinant DNA Tech', 'Neural & Endocrine Regulation', 'Cellular Respiration'],
-      gradient: 'from-[#00D6FF]/15 to-[#0050FF]/15 border-[#00D6FF]/40 dark:from-[#00D6FF]/25 dark:to-[#0050FF]/25 dark:border-[#00D6FF]/50',
+      gradient: 'from-[#F5D061]/15 to-[#D4AF37]/15 border-[#F5D061]/40 dark:from-[#F5D061]/25 dark:to-[#D4AF37]/25 dark:border-[#F5D061]/50',
     },
   ];
 
@@ -104,7 +104,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-4">
               <BookOpen className="w-3.5 h-3.5" /> CURRICULUM CATALOG
             </div>
             <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
@@ -120,7 +120,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-2 rounded-full text-xs font-medium transition-all duration-300 whitespace-nowrap ${
                   activeTab === tab
-                    ? 'bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white shadow-[0_0_20px_rgba(0,214,255,0.4)]'
+                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold shadow-[0_0_20px_rgba(245,208,97,0.4)]'
                     : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-300/50 dark:hover:bg-white/5'
                 }`}
               >
@@ -139,7 +139,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
         {/* Course Cards Grid Header */}
         <div className="flex items-center justify-between mt-12 mb-6">
           <h3 className="text-xl font-bold text-slate-900 dark:text-white font-mono flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-[#0050FF] dark:text-[#00D6FF]" />
+            <BookOpen className="w-5 h-5 text-[#D4AF37] dark:text-[#F5D061]" />
             <span>
               {activeTab === 'All' 
                 ? 'All Available Course Modules (4)' 
@@ -163,7 +163,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
-                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#00D6FF] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,80,255,0.25)] h-full`}
+                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#F5D061] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(212,175,55,0.25)] h-full`}
                 >
                   <div>
                     {/* Course Header */}
@@ -178,7 +178,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                     </div>
 
                     {/* Title & Description */}
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF] transition-colors leading-snug">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061] transition-colors leading-snug">
                       {course.title}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-white/70 leading-relaxed mb-6">
@@ -186,7 +186,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                     </p>
 
                     {/* Topics Pills */}
-                    <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#0050FF] dark:text-[#00D6FF] mb-2 flex items-center gap-1.5">
+                    <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#D4AF37] dark:text-[#F5D061] mb-2 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5" /> Module Core Highlights
                     </h4>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -202,21 +202,21 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                   <div className="pt-4 border-t border-slate-200 dark:border-white/10">
                     <div className="flex items-center justify-between text-xs text-slate-600 dark:text-white/60 mb-4 font-mono">
                       <div className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-[#0050FF] dark:text-[#00D6FF]" />
+                        <Clock className="w-3.5 h-3.5 text-[#D4AF37] dark:text-[#F5D061]" />
                         <span>{course.duration} ({course.lessons} Lessons)</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Users className="w-3.5 h-3.5 text-[#0050FF]" />
+                        <Users className="w-3.5 h-3.5 text-[#D4AF37]" />
                         <span>{course.students}</span>
                       </div>
                     </div>
 
                     <button
                       onClick={() => setSelectedCourse(course)}
-                      className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0050FF] to-[#00D6FF] hover:from-[#0050FF] hover:to-[#70CFFF] font-semibold text-xs text-white border border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-[0_0_15px_rgba(0,214,255,0.3)]"
+                      className="w-full py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F5D061] hover:opacity-90 font-bold text-xs text-slate-950 border border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-[0_0_15px_rgba(245,208,97,0.3)]"
                     >
                       <span>View Detailed Syllabus Breakdown</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform text-slate-950" />
                     </button>
                   </div>
                 </motion.div>
@@ -241,7 +241,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
-                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#00D6FF] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(0,80,255,0.25)]`}
+                  className={`group relative rounded-2xl glass-panel p-6 border bg-gradient-to-b ${course.gradient} hover:border-[#F5D061] transition-all duration-500 flex flex-col justify-between hover:shadow-[0_15px_40px_rgba(212,175,55,0.25)]`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -254,7 +254,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                       </div>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#0050FF] dark:group-hover:text-[#00D6FF] transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#D4AF37] dark:group-hover:text-[#F5D061] transition-colors leading-snug">
                       {course.title}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-white/65 leading-relaxed mb-6 line-clamp-3">
@@ -273,11 +273,11 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                   <div className="pt-4 border-t border-slate-200 dark:border-white/10">
                     <div className="flex items-center justify-between text-xs text-slate-600 dark:text-white/60 mb-4 font-mono">
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-[#0050FF] dark:text-[#00D6FF]" />
+                        <Clock className="w-3 h-3 text-[#D4AF37] dark:text-[#F5D061]" />
                         <span>{course.duration}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Users className="w-3 h-3 text-[#0050FF]" />
+                        <Users className="w-3 h-3 text-[#D4AF37]" />
                         <span>{course.students}</span>
                       </div>
                     </div>
@@ -286,7 +286,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                       onClick={() => {
                         setActiveTab(course.subject);
                       }}
-                      className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-[#0050FF] hover:text-white dark:bg-white/10 dark:hover:bg-[#00D6FF] dark:hover:text-black font-semibold text-xs text-slate-800 dark:text-white border border-slate-300 dark:border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                      className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-[#D4AF37] hover:text-slate-950 dark:bg-white/10 dark:hover:bg-[#F5D061] dark:hover:text-black font-extrabold text-xs text-slate-800 dark:text-white border border-slate-300 dark:border-white/15 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
                       <span>Explore Subject Syllabus</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -311,7 +311,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="relative w-full max-w-2xl rounded-3xl glass-panel p-8 border border-[#00D6FF]/50 shadow-[0_0_80px_rgba(0,214,255,0.3)] bg-white dark:bg-[#0C0D12]"
+              className="relative w-full max-w-2xl rounded-3xl glass-panel p-8 border border-[#F5D061]/50 shadow-[0_0_80px_rgba(245,208,97,0.3)] bg-white dark:bg-[#0C0D12]"
             >
               <button
                 onClick={() => setSelectedCourse(null)}
@@ -320,7 +320,7 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#00D6FF]/10 text-[#0050FF] dark:text-[#00D6FF] border border-[#00D6FF]/30 mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] border border-[#F5D061]/30 mb-4">
                 {selectedCourse.category} Syllabus Overview
               </div>
 
@@ -338,11 +338,11 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                 {selectedCourse.description} This comprehensive module includes AI-driven step-by-step problem sets, interactive visual laboratories, and real-time exam prediction scoring.
               </p>
 
-              <h4 className="text-xs uppercase font-mono tracking-widest text-[#0050FF] dark:text-[#00D6FF] mb-3">Core Modules Included</h4>
+              <h4 className="text-xs uppercase font-mono tracking-widest text-[#D4AF37] dark:text-[#F5D061] mb-3">Core Modules Included</h4>
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {selectedCourse.topics.map((t, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs text-slate-800 dark:text-white/90 p-2.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
-                    <CheckCircle2 className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061]" />
                     <span>{t}</span>
                   </div>
                 ))}
@@ -359,10 +359,10 @@ export const CourseShowcase: React.FC<CourseShowcaseProps> = ({ onOpenAuth }) =>
                     setSelectedCourse(null);
                     onOpenAuth && onOpenAuth('register');
                   }}
-                  className="px-6 py-3 rounded-full bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-xs shadow-[0_0_20px_rgba(0,214,255,0.4)] hover:scale-105 transition-transform flex items-center gap-2"
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 font-extrabold text-xs shadow-[0_0_20px_rgba(245,208,97,0.4)] hover:scale-105 transition-transform flex items-center gap-2"
                 >
                   <span>Enroll & Register</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-slate-950" />
                 </button>
               </div>
             </motion.div>

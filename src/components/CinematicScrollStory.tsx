@@ -59,7 +59,7 @@ export const CinematicScrollStory: React.FC = () => {
       x: (Math.random() - 0.5) * width * 0.8,
       y: (Math.random() - 0.5) * height * 0.8,
       size: Math.random() * 3 + 1.5,
-      color: i % 3 === 0 ? '#00D6FF' : i % 3 === 1 ? '#0050FF' : isDark ? '#FFFFFF' : '#334155',
+      color: i % 3 === 0 ? '#F5D061' : i % 3 === 1 ? '#D4AF37' : isDark ? '#FFFFFF' : '#334155',
       speedX: (Math.random() - 0.5) * 0.5,
       speedY: (Math.random() - 0.5) * 0.5,
       angle: Math.random() * Math.PI * 2,
@@ -125,10 +125,10 @@ export const CinematicScrollStory: React.FC = () => {
           <div className="w-1 h-48 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden relative">
             <motion.div 
               style={{ scaleY: smoothProgress, transformOrigin: 'top' }}
-              className="w-full h-full bg-gradient-to-b from-[#0050FF] to-[#00D6FF] rounded-full"
+              className="w-full h-full bg-gradient-to-b from-[#D4AF37] to-[#F5D061] rounded-full"
             />
           </div>
-          <motion.span className="text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] font-bold">
+          <motion.span className="text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] font-bold">
             {Math.round(smoothProgress.get() * 100)}%
           </motion.span>
         </div>
@@ -138,7 +138,7 @@ export const CinematicScrollStory: React.FC = () => {
           style={{ opacity: beat1Opacity, y: beat1Y }}
           className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-6">
             <Sparkles className="w-3.5 h-3.5" /> BEAT 01 / TRADITIONAL TO INTELLIGENT
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 max-w-4xl">
@@ -160,7 +160,7 @@ export const CinematicScrollStory: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
             
             <div className="lg:col-span-6 text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-6">
                 <BookOpen className="w-3.5 h-3.5" /> BEAT 02 / KNOWLEDGE UNLOCKED
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
@@ -177,7 +177,7 @@ export const CinematicScrollStory: React.FC = () => {
                   'Connected knowledge graphs bridging concepts',
                 ].map((point, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 backdrop-blur-md">
-                    <CheckCircle2 className="w-5 h-5 text-[#0050FF] dark:text-[#00D6FF] flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#D4AF37] dark:text-[#F5D061] flex-shrink-0" />
                     <span className="text-sm font-medium text-slate-800 dark:text-white/90">{point}</span>
                   </div>
                 ))}
@@ -188,28 +188,28 @@ export const CinematicScrollStory: React.FC = () => {
               <div className="w-full max-w-md h-80 sm:h-96 rounded-2xl glass-panel p-6 border border-slate-200 dark:border-white/20 relative shadow-2xl overflow-hidden flex flex-col justify-between">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#00D6FF]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#F5D061]" />
                     <span className="text-xs font-mono text-slate-800 dark:text-white/80 font-bold">PHYSICS: QUANTUM MECHANICS</span>
                   </div>
                   <span className="text-[10px] font-mono text-slate-400 dark:text-white/40">Page 142 / Interactive</span>
                 </div>
 
                 <div className="my-auto space-y-3 text-left">
-                  <div className="p-3 rounded-lg bg-slate-900 text-cyan-300 border border-slate-700 text-xs font-mono">
+                  <div className="p-3 rounded-lg bg-slate-900 text-[#F5D061] border border-[#D4AF37]/30 text-xs font-mono">
                     E = mc² &rarr; Schrödinger Wave Equation &Psi;(x,t)
                   </div>
                   <p className="text-xs text-slate-600 dark:text-white/70 leading-relaxed">
                     "When a particle is unobserved, wave-particle duality dictates superpositions across quantum field matrices."
                   </p>
-                  <div className="p-2.5 rounded-lg bg-[#0050FF]/10 dark:bg-[#0050FF]/15 border border-[#0050FF]/40 text-xs text-slate-900 dark:text-white flex items-center justify-between">
+                  <div className="p-2.5 rounded-lg bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-xs text-slate-900 dark:text-white flex items-center justify-between">
                     <span className="font-semibold">AI Note: Key Exam Topic</span>
-                    <span className="text-[10px] font-mono text-[#0050FF] dark:text-[#00D6FF]">High Probability</span>
+                    <span className="text-[10px] font-mono text-[#D4AF37] dark:text-[#F5D061]">High Probability</span>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs text-slate-500 dark:text-white/50">
                   <span>Interactive Formulas</span>
-                  <span className="text-[#0050FF] dark:text-[#00D6FF] font-mono">Live Simulation Active</span>
+                  <span className="text-[#D4AF37] dark:text-[#F5D061] font-mono">Live Simulation Active</span>
                 </div>
               </div>
             </div>
@@ -225,13 +225,13 @@ export const CinematicScrollStory: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
             
             <div className="lg:col-span-6 relative flex items-center justify-center order-2 lg:order-1">
-              <div className="w-full max-w-md h-84 sm:h-96 rounded-2xl glass-panel p-6 border border-[#0050FF]/50 shadow-[0_0_50px_rgba(0,80,255,0.25)] relative overflow-hidden flex flex-col justify-between">
+              <div className="w-full max-w-md h-84 sm:h-96 rounded-2xl glass-panel p-6 border border-[#D4AF37]/50 shadow-[0_0_50px_rgba(212,175,55,0.25)] relative overflow-hidden flex flex-col justify-between">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-3">
                   <div className="flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-[#0050FF] dark:text-[#00D6FF]" />
+                    <Brain className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061]" />
                     <span className="text-xs font-mono text-slate-900 dark:text-white font-bold">NEURAL REASONING CORE</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#00D6FF]/20 text-[#0050FF] dark:text-[#00D6FF]">Real-Time Synthesis</span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#F5D061]/20 text-[#D4AF37] dark:text-[#F5D061]">Real-Time Synthesis</span>
                 </div>
 
                 <div className="my-auto space-y-3">
@@ -240,11 +240,11 @@ export const CinematicScrollStory: React.FC = () => {
                     <span className="text-red-500 font-bold">-18% Margin</span>
                   </div>
                   <div className="w-full bg-slate-200 dark:bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="w-[62%] h-full bg-gradient-to-r from-red-500 via-yellow-500 to-[#00D6FF]" />
+                    <div className="w-[62%] h-full bg-gradient-to-r from-red-500 via-yellow-500 to-[#F5D061]" />
                   </div>
 
-                  <div className="p-3 rounded-xl bg-[#0050FF]/10 dark:bg-[#0050FF]/20 border border-[#0050FF]/40 text-xs text-slate-900 dark:text-white space-y-1">
-                    <div className="font-bold text-[#0050FF] dark:text-[#00D6FF] flex items-center gap-1.5">
+                  <div className="p-3 rounded-xl bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-xs text-slate-900 dark:text-white space-y-1">
+                    <div className="font-bold text-[#D4AF37] dark:text-[#F5D061] flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5" /> AI Recommended Practice Plan
                     </div>
                     <p className="text-slate-700 dark:text-white/80 text-[11px]">
@@ -255,13 +255,13 @@ export const CinematicScrollStory: React.FC = () => {
 
                 <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-white/60">
                   <span>Confidence Index: 91.4%</span>
-                  <span className="text-[#0050FF] dark:text-[#00D6FF]">Adaptive Mode</span>
+                  <span className="text-[#D4AF37] dark:text-[#F5D061]">Adaptive Mode</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-6 text-left order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-6">
                 <Brain className="w-3.5 h-3.5" /> BEAT 03 / INTELLIGENT ADAPTATION
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
@@ -292,7 +292,7 @@ export const CinematicScrollStory: React.FC = () => {
           className="absolute inset-0 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center text-center"
         >
           <div className="w-full">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#0050FF] dark:text-[#00D6FF] border border-[#0050FF]/30 dark:border-[#00D6FF]/30 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-6">
               <GraduationCap className="w-3.5 h-3.5" /> BEAT 04 / MASTERY & EXCELLENCE
             </div>
             <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
@@ -303,25 +303,25 @@ export const CinematicScrollStory: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
-              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/40 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#0050FF]/20 border border-[#0050FF]/40 flex items-center justify-center text-[#0050FF] dark:text-[#00D6FF] mb-4">
+              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] dark:text-[#F5D061] mb-4">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Master Lectures</h4>
                 <p className="text-xs text-slate-500 dark:text-white/60">Structured HD video series taught by Cambridge & MIT educators.</p>
               </div>
 
-              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/40 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#00D6FF]/20 border border-[#00D6FF]/40 flex items-center justify-center text-[#0050FF] dark:text-[#00D6FF] mb-4">
+              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-[#F5D061]/20 border border-[#F5D061]/40 flex items-center justify-center text-[#D4AF37] dark:text-[#F5D061] mb-4">
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">Adaptive Quizzes</h4>
                 <p className="text-xs text-slate-500 dark:text-white/60">10,000+ past paper questions auto-curated to your skill level.</p>
               </div>
 
-              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#00D6FF]/40 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0050FF] to-[#00D6FF] p-0.5 mb-4">
-                  <div className="w-full h-full bg-white dark:bg-[#050505] rounded-[10px] flex items-center justify-center text-[#0050FF] dark:text-[#00D6FF]">
+              <div className="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#F5D061] p-0.5 mb-4">
+                  <div className="w-full h-full bg-white dark:bg-[#050505] rounded-[10px] flex items-center justify-center text-[#D4AF37] dark:text-[#F5D061]">
                     <Sparkles className="w-5 h-5" />
                   </div>
                 </div>
@@ -337,8 +337,8 @@ export const CinematicScrollStory: React.FC = () => {
           style={{ opacity: beat5Opacity, scale: beat5Scale }}
           className="absolute inset-0 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center"
         >
-          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-[#00D6FF]/30 shadow-xl dark:shadow-[0_0_80px_rgba(0,214,255,0.2)] max-w-3xl w-full">
-            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#00D6FF]/10 text-[#0050FF] dark:text-[#00D6FF] border border-[#00D6FF]/30 text-xs font-mono mb-6">
+          <div className="p-8 sm:p-12 rounded-3xl glass-panel border border-[#F5D061]/30 shadow-xl dark:shadow-[0_0_80px_rgba(245,208,97,0.2)] max-w-3xl w-full">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] border border-[#F5D061]/30 text-xs font-mono mb-6">
               <Sparkles className="w-3.5 h-3.5" /> REASSEMBLY COMPLETE / DIGITAL LIBRARY READY
             </div>
             
@@ -353,16 +353,16 @@ export const CinematicScrollStory: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#pricing"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#0050FF] to-[#00D6FF] text-white font-semibold text-base shadow-[0_0_30px_rgba(0,214,255,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5D061] to-[#AA771C] text-slate-950 font-extrabold text-base shadow-[0_0_30px_rgba(245,208,97,0.5)] hover:scale-105 transition-transform flex items-center justify-center gap-2"
               >
                 <span>Start Your Learning Journey</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 text-slate-950" />
               </a>
               <a
                 href="#courses"
                 className="w-full sm:w-auto px-8 py-4 rounded-full glass-panel text-slate-800 dark:text-white font-medium text-base hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-300 dark:border-white/20 transition-all flex items-center justify-center gap-2"
               >
-                <BookOpen className="w-5 h-5 text-[#0050FF] dark:text-[#00D6FF]" />
+                <BookOpen className="w-5 h-5 text-[#D4AF37] dark:text-[#F5D061]" />
                 <span>View All Courses</span>
               </a>
             </div>
