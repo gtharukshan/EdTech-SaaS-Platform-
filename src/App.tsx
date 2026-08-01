@@ -12,9 +12,11 @@ import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
 import { AuthModal } from './components/AuthModal';
 import { StudentDashboard } from './components/StudentDashboard';
+import { TeacherAuth } from './teacher/TeacherAuth';
+import { TeacherDashboard } from './teacher/TeacherDashboard';
 
 export function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'dashboard'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'student-dashboard' | 'teacher-dashboard' | 'teacher-auth'>('landing');
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'register' | 'login'>('register');
 
@@ -26,18 +28,59 @@ export function App() {
     stream: 'Physical Science',
   });
 
+  const [teacherProfile, setTeacherProfile] = useState<{
+    name: string;
+    subject: string;
+  }>({
+    name: 'Eng. R. Jeyakumar',
+    subject: 'Combined Mathematics',
+  });
+
   const openAuth = (mode: 'register' | 'login' = 'register') => {
     setAuthMode(mode);
     setIsAuthOpen(true);
   };
 
-  const handleNavigateToDashboard = (profile: { name: string; stream: 'Physical Science' | 'Biological Science' }) => {
+  const handleNavigateToStudentDashboard = (profile: { name: string; stream: 'Physical Science' | 'Biological Science' }) => {
     setStudentProfile(profile);
-    setCurrentView('dashboard');
+    setCurrentView('student-dashboard');
   };
 
+  const handleNavigateToTeacherDashboard = (teacherData: { name: string; subject: string }) => {
+    setTeacherProfile(teacherData);
+    setCurrentView('teacher-dashboard');
+  };
+
+  // IF TEACHER AUTH VIEW IS SELECTED -> RENDER TEACHER PORTAL ONBOARDING MODULE!
+  if (currentView === 'teacher-auth') {
+    return (
+      <TeacherAuth
+        onNavigateHome={() => setCurrentView('landing')}
+        onNavigateToStudentPortal={() => {
+          openAuth('login');
+          setCurrentView('landing');
+        }}
+        onTeacherLoginSuccess={(teacherData) => {
+          setTeacherProfile(teacherData);
+          setCurrentView('teacher-dashboard');
+        }}
+      />
+    );
+  }
+
+  // IF TEACHER IS IN DASHBOARD VIEW -> RENDER DEDICATED TEACHER PORTAL DASHBOARD!
+  if (currentView === 'teacher-dashboard') {
+    return (
+      <TeacherDashboard
+        teacherName={teacherProfile.name}
+        subject={teacherProfile.subject}
+        onNavigateHome={() => setCurrentView('landing')}
+      />
+    );
+  }
+
   // IF STUDENT IS IN DASHBOARD VIEW -> RENDER DEDICATED STUDENT HOME / DASHBOARD PAGE!
-  if (currentView === 'dashboard') {
+  if (currentView === 'student-dashboard') {
     return (
       <StudentDashboard
         studentName={studentProfile.name}
@@ -49,25 +92,28 @@ export function App() {
 
   // OTHERWISE -> RENDER MAIN LANDING PAGE VIEW
   return (
-    <div className="relative min-h-screen bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-white selection:bg-[#D4AF37]/30 selection:text-[#F5D061] transition-colors duration-300">
+    <div className="relative min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)] transition-colors duration-300">
       {/* Sticky Navigation Bar */}
-      <Navbar onOpenAuth={openAuth} />
+      <Navbar
+        onOpenAuth={openAuth}
+        onOpenTeacherPortal={() => setCurrentView('teacher-auth')}
+      />
 
       {/* Main Content Sections */}
       <main>
-        {/* 01: Hero Section with 3D Book Floating Visual */}
+        {/* 01: Hero Section */}
         <Hero onOpenAuth={openAuth} />
 
-        {/* 02: Core 400vh Scroll-Linked Canvas Storytelling */}
+        {/* 02: Cinematic Parallax Scroll Story */}
         <CinematicScrollStory />
 
-        {/* 03: 4 Glassmorphism Feature Cards */}
+        {/* 03: Feature Cards */}
         <FeatureCards />
 
-        {/* 04: Course Catalog & Interactive Syllabus Modal */}
+        {/* 04: Course Catalog */}
         <CourseShowcase onOpenAuth={openAuth} />
 
-        {/* 05: Live Interactive AI Tutor Prompt & Reasoning Demo */}
+        {/* 05: Live Interactive AI Tutor Prompt */}
         <AiTutorDemo />
 
         {/* 06: Student Neural Dashboard Showcase */}
@@ -76,22 +122,23 @@ export function App() {
         {/* 07: Master Educator Profiles */}
         <TeacherSection />
 
-        {/* 08: Student Success Testimonials */}
+        {/* 08: Testimonials */}
         <Testimonials />
 
-        {/* 09: Membership Pricing Plans */}
+        {/* 09: Pricing Plans */}
         <Pricing onOpenAuth={openAuth} />
       </main>
 
       {/* Dark Luxury Footer */}
       <Footer />
 
-      {/* Interactive Registration & Login Portal Modal */}
+      {/* Unified Registration & Login Portal Modal */}
       <AuthModal
         isOpen={isAuthOpen}
         onClose={() => setIsAuthOpen(false)}
         initialMode={authMode}
-        onNavigateToDashboard={handleNavigateToDashboard}
+        onNavigateToDashboard={handleNavigateToStudentDashboard}
+        onNavigateToTeacherDashboard={handleNavigateToTeacherDashboard}
       />
     </div>
   );

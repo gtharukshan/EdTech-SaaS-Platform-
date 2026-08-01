@@ -31,20 +31,20 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-28 bg-slate-50 dark:bg-[#050505] overflow-hidden transition-colors duration-300">
+    <section className="relative py-28 bg-[var(--bg-main)] overflow-hidden transition-colors duration-300">
       <div className="ambient-glow-blue bottom-1/3 left-1/2 -translate-x-1/2 opacity-40 pointer-events-none" />
 
       <div className="max-w-[1700px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-4 font-bold">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[var(--brand-gold-start)] border border-[var(--border-brand)] mb-4 font-bold">
             <Award className="w-3.5 h-3.5" /> PROVEN STUDENT SUCCESS
           </div>
-          <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-4xl sm:text-6xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight mb-4">
             Results that speak <span className="text-gradient-cyan">for themselves.</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-white/70">
+          <p className="text-base sm:text-lg text-[var(--text-secondary)]">
             Hear from top-performing students admitted to Cambridge, MIT, Imperial College, and Stanford.
           </p>
         </div>
@@ -58,30 +58,30 @@ export const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative rounded-3xl glass-panel p-8 border border-slate-200 dark:border-white/10 hover:border-[#F5D061]/40 transition-all duration-500 flex flex-col justify-between"
+              className="relative rounded-3xl glass-panel p-8 border border-[var(--border-primary)] hover:border-[var(--border-brand)] transition-all duration-500 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-1 text-amber-500 dark:text-amber-400">
+                  <div className="flex items-center gap-1 text-[var(--brand-gold-mid)]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current text-[#F5D061]" />
+                      <Star key={i} className="w-4 h-4 fill-current text-[var(--brand-gold-mid)]" />
                     ))}
                   </div>
-                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/10 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 font-bold">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-mono bg-[var(--bg-pill)] text-[var(--brand-gold-start)] border border-[var(--border-brand)] font-bold">
                     {t.improvement}
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-700 dark:text-white/80 leading-relaxed italic mb-8">
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed italic mb-8">
                   "{t.quote}"
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-slate-200 dark:border-white/10">
-                <h4 className="text-base font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
-                <p className="text-xs text-[#D4AF37] dark:text-[#F5D061] font-mono mb-2 font-bold">{t.role}</p>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500 dark:text-white/50">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
+              <div className="pt-6 border-t border-[var(--border-primary)]">
+                <h4 className="text-base font-bold text-[var(--text-primary)] mb-0.5">{t.name}</h4>
+                <p className="text-xs text-[var(--brand-gold-start)] font-mono mb-2 font-bold">{t.role}</p>
+                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[var(--text-muted)]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[var(--brand-gold-mid)]" />
                   <span>Accepted at {t.acceptedAt}</span>
                 </div>
               </div>

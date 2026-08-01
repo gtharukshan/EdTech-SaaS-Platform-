@@ -182,42 +182,42 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.4 }}
-      className="relative rounded-2xl glass-panel p-6 border border-slate-200 dark:border-[#D4AF37]/30 bg-white dark:bg-[#080A10] flex flex-col justify-between shadow-lg dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)] h-full min-h-[480px]"
+      className="relative rounded-2xl glass-panel p-6 border border-[var(--border-primary)] bg-[var(--bg-card)] text-[var(--text-primary)] flex flex-col justify-between shadow-lg h-full min-h-[480px]"
     >
       {/* Background glow accent */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#F5D061]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--brand-glow)] rounded-full blur-3xl pointer-events-none" />
 
       <div>
         {/* Header Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200 dark:border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[var(--border-primary)]">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#D4AF37]/10 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] border border-[#D4AF37]/30 dark:border-[#F5D061]/30 mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[var(--bg-pill)] text-[var(--brand-gold-start)] border border-[var(--border-brand)] mb-2">
               <ListChecks className="w-3.5 h-3.5" /> Official Core Syllabus
             </div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[var(--text-primary)] flex items-center gap-2">
               <span>{syllabus.subject} Syllabus</span>
             </h3>
-            <p className="text-xs text-slate-500 dark:text-white/50 font-mono mt-0.5">
+            <p className="text-xs text-[var(--text-muted)] font-mono mt-0.5">
               {syllabus.totalUnitsText}
             </p>
           </div>
 
           {/* Search Input Bar */}
           <div className="relative w-full sm:w-56">
-            <Search className="w-4 h-4 text-slate-400 dark:text-white/40 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[var(--text-subtle)] absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search topic..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-[#D4AF37] dark:focus:border-[#F5D061] transition-colors font-mono"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-[var(--bg-card)] border border-[var(--border-primary)] text-xs text-[var(--text-primary)] placeholder:text-[var(--text-subtle)] focus:outline-none focus:border-[var(--border-brand)] transition-colors font-mono"
             />
           </div>
         </div>
 
         {/* Category Tabs (e.g. for Combined Maths: Pure vs Applied) */}
         {syllabus.categories.length > 1 && (
-          <div className="flex items-center gap-2 mb-4 p-1 rounded-xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10">
+          <div className="flex items-center gap-2 mb-4 p-1 rounded-xl bg-[var(--bg-pill)] border border-[var(--border-primary)]">
             {syllabus.categories.map((cat, idx) => (
               <button
                 key={idx}
@@ -227,8 +227,8 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
                 }}
                 className={`flex-1 py-2 px-3 rounded-lg text-xs font-mono font-extrabold transition-all duration-300 ${
                   activeCategoryIndex === idx
-                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#F5D061] text-slate-950 shadow-md'
-                    : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5'
+                    ? 'bg-gradient-to-r from-[var(--brand-gold-start)] to-[var(--brand-gold-mid)] text-[var(--btn-primary-text)] shadow-md'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--btn-hover-overlay)]'
                 }`}
               >
                 {cat.title}
@@ -238,8 +238,8 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
         )}
 
         {/* Category Section Title */}
-        <div className="flex items-center justify-between mb-3 text-xs font-mono text-slate-600 dark:text-white/60">
-          <span className="text-[#D4AF37] dark:text-[#F5D061] font-bold">{currentCategory.title}</span>
+        <div className="flex items-center justify-between mb-3 text-xs font-mono text-[var(--text-secondary)]">
+          <span className="text-[var(--brand-gold-start)] font-bold">{currentCategory.title}</span>
           <span>Showing {filteredTopics.length} topics</span>
         </div>
 
@@ -252,18 +252,18 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.02 }}
-                className="group p-2.5 rounded-xl bg-slate-100/70 dark:bg-white/[0.03] hover:bg-[#D4AF37]/10 dark:hover:bg-[#F5D061]/10 border border-slate-200 dark:border-white/10 hover:border-[#D4AF37]/40 dark:hover:border-[#F5D061]/40 transition-all duration-300 flex items-start gap-2.5"
+                className="group p-2.5 rounded-xl bg-[var(--bg-pill)] hover:bg-[var(--bg-surface)] border border-[var(--border-primary)] hover:border-[var(--border-brand)] transition-all duration-300 flex items-start gap-2.5"
               >
-                <div className="w-5 h-5 rounded-md bg-[#D4AF37]/15 dark:bg-[#F5D061]/15 text-[#D4AF37] dark:text-[#F5D061] flex items-center justify-center text-[10px] font-mono font-bold shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                <div className="w-5 h-5 rounded-md bg-[var(--bg-pill)] text-[var(--brand-gold-start)] flex items-center justify-center text-[10px] font-mono font-bold shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                   {index + 1}
                 </div>
-                <span className="text-xs text-slate-800 dark:text-white/85 group-hover:text-slate-900 dark:group-hover:text-white font-medium leading-snug">
+                <span className="text-xs text-[var(--text-primary)] font-medium leading-snug">
                   {topic}
                 </span>
               </motion.div>
             ))
           ) : (
-            <div className="col-span-2 text-center py-8 text-xs font-mono text-slate-400 dark:text-white/40">
+            <div className="col-span-2 text-center py-8 text-xs font-mono text-[var(--text-subtle)]">
               No syllabus topics found matching "{searchTerm}"
             </div>
           )}
@@ -271,14 +271,14 @@ export const SubjectSyllabusPanel: React.FC<SubjectSyllabusPanelProps> = ({ subj
       </div>
 
       {/* Footer Info & Download Syllabus */}
-      <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
-        <div className="flex items-center gap-2 text-slate-600 dark:text-white/60">
-          <Bookmark className="w-4 h-4 text-[#D4AF37] dark:text-[#F5D061]" />
+      <div className="pt-4 border-t border-[var(--border-primary)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+        <div className="flex items-center gap-2 text-[var(--text-secondary)]">
+          <Bookmark className="w-4 h-4 text-[var(--brand-gold-start)]" />
           <span>Includes Theory + Past Paper Revisions</span>
         </div>
         <button
           onClick={() => alert(`Downloading full official ${syllabus.subject} Syllabus PDF...`)}
-          className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-[#D4AF37] hover:text-slate-950 dark:bg-white/10 dark:hover:bg-[#F5D061] dark:hover:text-black text-slate-800 dark:text-white text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 border border-slate-300 dark:border-white/15"
+          className="px-4 py-2 rounded-xl bg-[var(--bg-pill)] hover:bg-[var(--brand-gold-start)] hover:text-[var(--btn-primary-text)] text-[var(--text-primary)] text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 border border-[var(--border-primary)]"
         >
           <Download className="w-3.5 h-3.5" />
           <span>Syllabus PDF</span>

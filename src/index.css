@@ -4,14 +4,119 @@
 
 @layer base {
   :root {
-    --color-bg: 5 5 5;
-    --color-bg-secondary: 10 10 12;
-    --color-blue: 212 175 55;
-    --color-cyan: 245 208 97;
+    /* Brand & Accent Colors */
+    --brand-primary: #2563EB;
+    --brand-primary-hover: #1D4ED8;
+    --brand-secondary: #3B82F6;
+    --brand-accent: #2563EB;
+    --brand-gold-start: #2563EB;
+    --brand-gold-mid: #3B82F6;
+    --brand-gold-end: #1D4ED8;
+    --brand-glow: rgba(37, 99, 235, 0.25);
+
+    /* Backgrounds */
+    --bg-main: #FAFAFA;
+    --bg-secondary: #F4F4F5;
+    --bg-card: #F4F4F5;
+    --bg-surface: #FFFFFF;
+    --bg-glass: rgba(255, 255, 255, 0.92);
+    --bg-pill: rgba(37, 99, 235, 0.08);
+    --bg-nav: rgba(250, 250, 250, 0.92);
+    --bg-drawer: #FFFFFF;
+
+    /* Text Colors */
+    --text-primary: #18181B;
+    --text-secondary: #71717A;
+    --text-muted: #71717A;
+    --text-subtle: #A1A1AA;
+    --text-inverse: #FFFFFF;
+
+    /* Border Colors */
+    --border-primary: #E4E4E7;
+    --border-secondary: #D4D4D8;
+    --border-brand: rgba(37, 99, 235, 0.35);
+    --border-glass: rgba(228, 228, 231, 0.8);
+
+    /* Buttons & Interactive Elements */
+    --btn-primary-bg-start: #2563EB;
+    --btn-primary-bg-end: #3B82F6;
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: #F4F4F5;
+    --btn-secondary-text: #18181B;
+    --btn-hover-overlay: rgba(0, 0, 0, 0.04);
+
+    /* Feedback & Status Colors */
+    --color-success: #16A34A;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --color-info: #2563EB;
+
+    /* Scrollbars & Effects */
+    --scroll-track: #FAFAFA;
+    --scroll-thumb: #D4D4D8;
+    --scroll-thumb-hover: #2563EB;
+    --shadow-glow: rgba(37, 99, 235, 0.25);
+  }
+
+  .dark {
+    /* Brand & Accent Colors */
+    --brand-primary: #3B82F6;
+    --brand-primary-hover: #60A5FA;
+    --brand-secondary: #60A5FA;
+    --brand-accent: #3B82F6;
+    --brand-gold-start: #3B82F6;
+    --brand-gold-mid: #60A5FA;
+    --brand-gold-end: #2563EB;
+    --brand-glow: rgba(59, 130, 246, 0.25);
+
+    /* Backgrounds */
+    --bg-main: #09090B;
+    --bg-secondary: #27272A;
+    --bg-card: #27272A;
+    --bg-surface: #18181B;
+    --bg-glass: rgba(24, 24, 27, 0.88);
+    --bg-pill: rgba(59, 130, 246, 0.12);
+    --bg-nav: rgba(9, 9, 11, 0.9);
+    --bg-drawer: #09090B;
+
+    /* Text Colors */
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+    --text-muted: #A1A1AA;
+    --text-subtle: #71717A;
+    --text-inverse: #09090B;
+
+    /* Border Colors */
+    --border-primary: #3F3F46;
+    --border-secondary: #52525B;
+    --border-brand: rgba(59, 130, 246, 0.4);
+    --border-glass: rgba(63, 63, 70, 0.6);
+
+    /* Buttons & Interactive Elements */
+    --btn-primary-bg-start: #3B82F6;
+    --btn-primary-bg-end: #60A5FA;
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: #27272A;
+    --btn-secondary-text: #FAFAFA;
+    --btn-hover-overlay: rgba(255, 255, 255, 0.08);
+
+    /* Feedback & Status Colors */
+    --color-success: #22C55E;
+    --color-warning: #FBBF24;
+    --color-error: #F87171;
+    --color-info: #3B82F6;
+
+    /* Scrollbars & Effects */
+    --scroll-track: #09090B;
+    --scroll-thumb: #3F3F46;
+    --scroll-thumb-hover: #3B82F6;
+    --shadow-glow: rgba(59, 130, 246, 0.25);
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-white transition-colors duration-300;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
   }
@@ -21,73 +126,62 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
-html.dark ::-webkit-scrollbar-track {
-  background: #050505;
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
 }
-html:not(.dark) ::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-html.dark ::-webkit-scrollbar-thumb {
-  background: #1e2029;
-  border-radius: 4px;
-}
-html:not(.dark) ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: var(--scroll-thumb-hover);
 }
 
 /* Glassmorphism Surface Utility */
 .glass-panel {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  @apply bg-white/70 border border-slate-200/80 shadow-lg dark:bg-[#0C0D12]/75 dark:border-[#D4AF37]/20 dark:shadow-none;
+  background-color: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 .glass-panel-interactive {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  @apply bg-white/80 border border-slate-200 shadow-md hover:bg-white hover:border-[#D4AF37]/40 hover:shadow-xl dark:bg-[#0C0D12]/75 dark:border-[#D4AF37]/20 dark:hover:bg-[#111319]/90 dark:hover:border-[#F5D061]/40;
+  background-color: var(--bg-glass);
+  border: 1px solid var(--border-glass);
 }
 
 .glass-panel-interactive:hover {
-  box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.3), 0 0 20px 0 rgba(245, 208, 97, 0.2);
+  box-shadow: 0 10px 40px -10px var(--shadow-glow);
+  border-color: var(--border-brand);
   transform: translateY(-2px);
 }
 
 .glass-pill {
   backdrop-filter: blur(12px);
-  @apply bg-slate-900/5 border border-slate-200 text-slate-800 dark:bg-[#D4AF37]/[0.06] dark:border-[#D4AF37]/20 dark:text-white;
+  background-color: var(--bg-pill);
+  border: 1px solid var(--border-brand);
+  color: var(--text-primary);
 }
 
 /* Radiant Glowing Text */
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #BF953F 0%, #D4AF37 40%, #F5D061 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.dark .text-gradient-cyan {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5D061 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, var(--brand-gold-start) 0%, var(--brand-gold-mid) 50%, var(--brand-gold-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, #AA771C 0%, #D4AF37 60%, #F5D061 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.dark .text-gradient-blue {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5D061 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 60%, var(--brand-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  background: linear-gradient(135deg, var(--brand-gold-start) 0%, var(--text-primary) 25%, var(--brand-primary) 50%, var(--brand-gold-mid) 75%, var(--brand-gold-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -98,7 +192,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 208, 97, 0.18) 0%, rgba(212, 175, 55, 0.06) 40%, transparent 70%);
+  background: radial-gradient(circle, var(--brand-glow) 0%, transparent 70%);
   pointer-events: none;
   filter: blur(60px);
 }
@@ -108,7 +202,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(10, 11, 14, 0.05) 50%, transparent 75%);
+  background: radial-gradient(circle, var(--brand-glow) 0%, transparent 75%);
   pointer-events: none;
   filter: blur(80px);
 }
@@ -127,13 +221,8 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 .bg-grid-pattern {
   background-size: 60px 60px;
   background-image: 
-    linear-gradient(to right, rgba(212, 175, 55, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
-}
-.dark .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, var(--border-brand) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-brand) 1px, transparent 1px);
 }
 
 /* Noise overlay */
